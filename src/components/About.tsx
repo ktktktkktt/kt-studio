@@ -5,7 +5,7 @@ const About = () => {
   const stats = [
     {
       icon: <Users className="w-8 h-8" />,
-      number: "150+",
+      number: "200+",
       label: "Реализованных проектов",
       description: "Сайты различной сложности"
     },

@@ -86,6 +86,78 @@ const Blog = () => {
       readTime: "11 мин",
       tags: ["Security", "HTTPS", "Web Development"],
       link: "/blog/web-security-guide"
+    },
+    {
+      id: 7,
+      title: "Progressive Web Apps: будущее веб-разработки",
+      excerpt: "Что такое PWA, их преимущества и как создать современное веб-приложение с возможностями нативных приложений.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      category: "development",
+      author: "Кирилл Ткаченко",
+      date: "2023-12-20",
+      readTime: "13 мин",
+      tags: ["PWA", "Web Apps", "Mobile"],
+      link: "/blog/progressive-web-apps"
+    },
+    {
+      id: 8,
+      title: "Конверсионный дизайн: психология продающих сайтов",
+      excerpt: "Психологические принципы, которые влияют на решения пользователей. Как создать дизайн, который конвертирует.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      category: "design",
+      author: "Кирилл Ткаченко",
+      date: "2023-12-15",
+      readTime: "9 мин",
+      tags: ["Psychology", "Conversion", "Design"],
+      link: "/blog/conversion-design"
+    },
+    {
+      id: 9,
+      title: "Headless CMS: новый подход к управлению контентом",
+      excerpt: "Преимущества безголовых CMS, популярные решения и когда стоит их использовать для ваших проектов.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      category: "development",
+      author: "Кирилл Ткаченко",
+      date: "2023-12-10",
+      readTime: "10 мин",
+      tags: ["CMS", "Headless", "API"],
+      link: "/blog/headless-cms"
+    },
+    {
+      id: 10,
+      title: "Микроанимации в веб-дизайне: как улучшить UX",
+      excerpt: "Роль микроанимаций в пользовательском опыте, примеры эффективного использования и инструменты для создания.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      category: "design",
+      author: "Кирилл Ткаченко",
+      date: "2023-12-05",
+      readTime: "8 мин",
+      tags: ["Animation", "UX", "CSS"],
+      link: "/blog/microanimations-ux"
+    },
+    {
+      id: 11,
+      title: "TypeScript в 2024: зачем нужна типизация в JavaScript",
+      excerpt: "Преимущества TypeScript, основы типизации и как начать использовать TypeScript в ваших проектах.",
+      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      category: "development",
+      author: "Кирилл Ткаченко",
+      date: "2023-11-30",
+      readTime: "12 мин",
+      tags: ["TypeScript", "JavaScript", "Types"],
+      link: "/blog/typescript-2024"
+    },
+    {
+      id: 12,
+      title: "E-commerce тренды 2024: что важно знать владельцам интернет-магазинов",
+      excerpt: "Актуальные тренды в сфере электронной коммерции, новые технологии и стратегии для увеличения продаж.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      category: "business",
+      author: "Кирилл Ткаченко",
+      date: "2023-11-25",
+      readTime: "14 мин",
+      tags: ["E-commerce", "Trends", "Business"],
+      link: "/blog/ecommerce-trends-2024"
     }
   ];
 

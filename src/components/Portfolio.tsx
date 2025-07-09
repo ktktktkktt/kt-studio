@@ -1,5 +1,6 @@
 
-import { ExternalLink, Code, Smartphone, ShoppingCart } from 'lucide-react';
+import { ExternalLink, Code, Smartphone, ShoppingCart, Globe, Database, Palette, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const projects = [
@@ -9,7 +10,8 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["React", "Node.js", "PostgreSQL"],
       category: "E-commerce",
-      icon: <ShoppingCart className="w-5 h-5" />
+      icon: <ShoppingCart className="w-5 h-5" />,
+      link: "/portfolio/techstore"
     },
     {
       title: "Корпоративный сайт IT-компании DevCorp",
@@ -17,7 +19,8 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["Vue.js", "Laravel", "MySQL"],
       category: "Corporate",
-      icon: <Code className="w-5 h-5" />
+      icon: <Code className="w-5 h-5" />,
+      link: "/portfolio/devcorp"
     },
     {
       title: "Landing Page для стартапа FinTech",
@@ -25,7 +28,89 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2426&q=80",
       tech: ["Next.js", "Tailwind", "Vercel"],
       category: "Landing",
-      icon: <Smartphone className="w-5 h-5" />
+      icon: <Smartphone className="w-5 h-5" />,
+      link: "/portfolio/fintech"
+    },
+    {
+      title: "Интернет-магазин модной одежды StyleShop",
+      description: "Создание стильного интернет-магазина с продвинутой системой фильтрации",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "GraphQL", "MongoDB"],
+      category: "E-commerce",
+      icon: <ShoppingCart className="w-5 h-5" />,
+      link: "/portfolio/styleshop"
+    },
+    {
+      title: "Веб-приложение для управления проектами TaskFlow",
+      description: "Современное SaaS-приложение для управления проектами и командной работы",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "TypeScript", "Node.js"],
+      category: "WebApp",
+      icon: <Globe className="w-5 h-5" />,
+      link: "/portfolio/taskflow"
+    },
+    {
+      title: "Корпоративный сайт медицинского центра",
+      description: "Разработка сайта с системой онлайн-записи и личным кабинетом",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Angular", "Django", "PostgreSQL"],
+      category: "Corporate",
+      icon: <Code className="w-5 h-5" />,
+      link: "/portfolio/medcenter"
+    },
+    {
+      title: "Образовательная платформа EduPlatform",
+      description: "Интерактивная платформа для онлайн-обучения с видеокурсами",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "WebRTC", "MongoDB"],
+      category: "WebApp",
+      icon: <Globe className="w-5 h-5" />,
+      link: "/portfolio/eduplatform"
+    },
+    {
+      title: "CRM система для автосалона CarCRM",
+      description: "Комплексная CRM система для управления продажами автомобилей",
+      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Vue.js", "Laravel", "MySQL"],
+      category: "WebApp",
+      icon: <Database className="w-5 h-5" />,
+      link: "/portfolio/carcrm"
+    },
+    {
+      title: "Дизайн-студия Creative Lab",
+      description: "Креативный сайт дизайн-студии с анимациями и портфолио",
+      image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Next.js", "Framer Motion", "Strapi"],
+      category: "Creative",
+      icon: <Palette className="w-5 h-5" />,
+      link: "/portfolio/creativelab"
+    },
+    {
+      title: "Фитнес-приложение FitTracker",
+      description: "Веб-приложение для отслеживания тренировок и питания",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "Firebase", "PWA"],
+      category: "WebApp",
+      icon: <Zap className="w-5 h-5" />,
+      link: "/portfolio/fittracker"
+    },
+    {
+      title: "Ресторан итальянской кухни Bella Vista",
+      description: "Элегантный сайт ресторана с онлайн-бронированием столиков",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["WordPress", "PHP", "MySQL"],
+      category: "Landing",
+      icon: <Smartphone className="w-5 h-5" />,
+      link: "/portfolio/bellavista"
+    },
+    {
+      title: "Банковский портал SecureBank",
+      description: "Безопасный корпоративный портал с системой документооборота",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Angular", "Spring Boot", "Oracle"],
+      category: "Corporate",
+      icon: <Code className="w-5 h-5" />,
+      link: "/portfolio/securebank"
     }
   ];
 
@@ -41,7 +126,11 @@ const Portfolio = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Link 
+              key={index} 
+              to={project.link}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group block"
+            >
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
@@ -73,19 +162,19 @@ const Portfolio = () => {
                   ))}
                 </div>
                 
-                <button className="flex items-center text-accent hover:text-primary transition-colors group">
+                <div className="flex items-center text-accent hover:text-primary transition-colors group">
                   Подробнее
                   <ExternalLink className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn-primary">
+          <Link to="/portfolio" className="btn-primary">
             Посмотреть все проекты
-          </button>
+          </Link>
         </div>
       </div>
     </section>
