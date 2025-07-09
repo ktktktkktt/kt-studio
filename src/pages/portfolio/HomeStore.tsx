@@ -1,6 +1,5 @@
-
 import { useScrollAnimation } from '@/utils/animations';
-import { ArrowLeft, ExternalLink, Calendar, Users, TrendingUp, ShoppingCart, Eye, Cube, Zap } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, TrendingUp, ShoppingCart, Eye, Box, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const HomeStore = () => {
@@ -38,7 +37,7 @@ const HomeStore = () => {
                   <span>E-commerce</span>
                 </div>
                 <div className="flex items-center">
-                  <Cube className="w-4 h-4 mr-2" />
+                  <Box className="w-4 h-4 mr-2" />
                   <span>3D/AR</span>
                 </div>
               </div>
@@ -112,7 +111,7 @@ const HomeStore = () => {
                 <h3 className="text-xl font-semibold mb-4">Технологии</h3>
                 <div className="space-y-3">
                   <div className="flex items-center">
-                    <Cube className="w-5 h-5 text-accent mr-3" />
+                    <Box className="w-5 h-5 text-accent mr-3" />
                     <span>Vue.js 3</span>
                   </div>
                   <div className="flex items-center">
