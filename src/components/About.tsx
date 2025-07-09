@@ -1,19 +1,19 @@
 
-import { Award, Users, Clock, TrendingUp } from 'lucide-react';
+import { Award, Users, Clock, TrendingUp, Shield, Target } from 'lucide-react';
 
 const About = () => {
   const stats = [
     {
       icon: <Users className="w-8 h-8" />,
-      number: "100+",
-      label: "Довольных клиентов",
-      description: "Успешно реализованных проектов"
+      number: "150+",
+      label: "Реализованных проектов",
+      description: "Сайты различной сложности"
     },
     {
       icon: <Clock className="w-8 h-8" />,
-      number: "5+",
+      number: "7+",
       label: "Лет опыта",
-      description: "В сфере профессиональных услуг"
+      description: "В веб-разработке и дизайне"
     },
     {
       icon: <Award className="w-8 h-8" />,
@@ -24,8 +24,26 @@ const About = () => {
     {
       icon: <TrendingUp className="w-8 h-8" />,
       number: "24/7",
-      label: "Поддержка",
+      label: "Техподдержка",
       description: "Всегда готовы помочь"
+    }
+  ];
+
+  const advantages = [
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "Экспертность",
+      description: "Команда профессионалов с опытом работы более 7 лет в сфере веб-разработки"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Гарантии",
+      description: "Предоставляем гарантию на все виды работ и техническую поддержку"
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Результат",
+      description: "Создаем сайты, которые работают на ваш бизнес и приносят реальную прибыль"
     }
   ];
 
@@ -36,48 +54,38 @@ const About = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl font-bold mb-6">
-              Почему выбирают нас?
+              Почему выбирают нас для создания сайтов?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Мы предоставляем профессиональные услуги высокого качества с индивидуальным подходом к каждому клиенту.
+              Мы создаем не просто сайты, а эффективные инструменты для развития вашего бизнеса. 
+              Каждый проект - это индивидуальный подход и качественное решение.
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-accent/10 rounded-full p-3 mr-4">
-                  <Award className="w-6 h-6 text-accent" />
+              {advantages.map((advantage, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="bg-accent/10 rounded-full p-3 mr-4">
+                    <div className="text-accent">
+                      {advantage.icon}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">{advantage.title}</h3>
+                    <p className="text-gray-600">{advantage.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Профессиональный подход</h3>
-                  <p className="text-gray-600">
-                    Высокий уровень экспертизы и внимание к деталям в каждом проекте
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-accent/10 rounded-full p-3 mr-4">
-                  <Users className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Индивидуальный подход</h3>
-                  <p className="text-gray-600">
-                    Каждое решение адаптировано под ваши конкретные потребности и цели
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-accent/10 rounded-full p-3 mr-4">
-                  <Clock className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Быстрая реализация</h3>
-                  <p className="text-gray-600">
-                    Оптимизированные процессы работы для достижения результата в кратчайшие сроки
-                  </p>
-                </div>
-              </div>
+              ))}
+            </div>
+
+            <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
+              <h3 className="font-semibold text-lg mb-3">Наши принципы работы</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Точное соблюдение сроков и бюджета</li>
+                <li>• Регулярная отчетность о ходе работ</li>
+                <li>• Использование современных технологий</li>
+                <li>• Тестирование на всех устройствах</li>
+                <li>• Обучение работе с сайтом</li>
+              </ul>
             </div>
           </div>
 

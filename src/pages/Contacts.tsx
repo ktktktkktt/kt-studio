@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
 const Contacts = () => {
@@ -12,7 +12,7 @@ const Contacts = () => {
             <span className="text-gradient">Контакты</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Свяжитесь с нами удобным для вас способом
+            Свяжитесь с нами для обсуждения вашего проекта
           </p>
         </div>
       </section>
@@ -33,12 +33,12 @@ const Contacts = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Телефон</h3>
                     <p className="text-gray-600 mb-2">
-                      <a href="tel:+7" className="hover:text-accent transition-colors">
-                        +7 (___) ___-__-__
+                      <a href="tel:+79001234567" className="hover:text-accent transition-colors">
+                        +7 (900) 123-45-67
                       </a>
                     </p>
                     <p className="text-sm text-gray-500">
-                      Пн-Пт: 9:00-18:00, Сб-Вс: по договоренности
+                      Пн-Пт: 9:00-18:00, Сб: 10:00-16:00
                     </p>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ const Contacts = () => {
                       </a>
                     </p>
                     <p className="text-sm text-gray-500">
-                      Ответим в течение часа в рабочее время
+                      Ответим в течение 30 минут
                     </p>
                   </div>
                 </div>
@@ -80,24 +80,30 @@ const Contacts = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Время работы</h3>
                     <p className="text-gray-600">Пн-Пт: 9:00-18:00</p>
+                    <p className="text-gray-600">Сб: 10:00-16:00</p>
                     <p className="text-sm text-gray-500">
-                      Выходные: консультации по договоренности
+                      Вс: выходной
                     </p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-lg mb-3">Быстрый контакт</h3>
+                <h3 className="font-semibold text-lg mb-3 flex items-center">
+                  <MessageCircle className="w-5 h-5 mr-2 text-accent" />
+                  Мессенджеры
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Для срочных вопросов звоните по телефону или пишите в мессенджеры
+                  Для быстрого общения используйте мессенджеры
                 </p>
                 <div className="flex space-x-4">
-                  <a href="#" className="flex items-center text-accent hover:text-primary transition-colors">
-                    <span className="mr-2">Telegram</span>
+                  <a href="https://t.me/tkachenko_kirill" className="flex items-center text-accent hover:text-primary transition-colors">
+                    <span className="mr-2">📱</span>
+                    <span>Telegram</span>
                   </a>
-                  <a href="#" className="flex items-center text-accent hover:text-primary transition-colors">
-                    <span className="mr-2">WhatsApp</span>
+                  <a href="https://wa.me/79001234567" className="flex items-center text-accent hover:text-primary transition-colors">
+                    <span className="mr-2">💬</span>
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>

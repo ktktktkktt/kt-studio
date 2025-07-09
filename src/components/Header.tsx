@@ -20,7 +20,7 @@ const Header = () => {
   const navigationItems = [
     { name: 'Главная', href: '/' },
     { name: 'Услуги', href: '/services' },
-    { name: 'О компании', href: '/about' },
+    { name: 'О нас', href: '/about' },
     { name: 'Портфолио', href: '/portfolio' },
     { name: 'Блог', href: '/blog' },
     { name: 'Контакты', href: '/contacts' },
@@ -58,9 +58,9 @@ const Header = () => {
 
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+7" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+            <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
               <Phone className="w-4 h-4 mr-1" />
-              +7 (___) ___-__-__
+              +7 (900) 123-45-67
             </a>
             <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
               <Mail className="w-4 h-4 mr-1" />
@@ -94,9 +94,9 @@ const Header = () => {
                 </Link>
               ))}
               <div className="border-t border-gray-200 mt-4 pt-4 px-4 space-y-2">
-                <a href="tel:+7" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+                <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
                   <Phone className="w-4 h-4 mr-1" />
-                  +7 (___) ___-__-__
+                  +7 (900) 123-45-67
                 </a>
                 <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
                   <Mail className="w-4 h-4 mr-1" />

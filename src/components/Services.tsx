@@ -1,31 +1,55 @@
 
-import { ArrowRight, CheckCircle, Star, Users, Zap, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Monitor, Smartphone, ShoppingCart, Search, Code, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
     {
+      icon: <Monitor className="w-8 h-8" />,
+      title: "Корпоративные сайты",
+      description: "Создание представительских сайтов для вашего бизнеса с современным дизайном и удобной навигацией.",
+      features: ["Адаптивный дизайн", "SEO-оптимизация", "Система управления контентом"],
+      price: "от 45 000 ₽",
+      link: "/services/corporate"
+    },
+    {
+      icon: <ShoppingCart className="w-8 h-8" />,
+      title: "Интернет-магазины",
+      description: "Разработка полнофункциональных интернет-магазинов с системой заказов и оплаты.",
+      features: ["Каталог товаров", "Корзина и оплата", "Панель администратора"],
+      price: "от 80 000 ₽",
+      link: "/services/ecommerce"
+    },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Landing Page",
+      description: "Эффективные посадочные страницы для рекламных кампаний с высокой конверсией.",
+      features: ["Высокая конверсия", "Быстрая загрузка", "A/B тестирование"],
+      price: "от 25 000 ₽",
+      link: "/services/landing"
+    },
+    {
+      icon: <Code className="w-8 h-8" />,
+      title: "Веб-приложения",
+      description: "Разработка сложных веб-приложений и SaaS-решений с современными технологиями.",
+      features: ["React/Vue.js", "REST API", "Базы данных"],
+      price: "от 120 000 ₽",
+      link: "/services/webapp"
+    },
+    {
+      icon: <Search className="w-8 h-8" />,
+      title: "SEO-продвижение",
+      description: "Комплексное продвижение сайта в поисковых системах для увеличения органического трафика.",
+      features: ["Техническое SEO", "Контент-маркетинг", "Анализ конкурентов"],
+      price: "от 30 000 ₽",
+      link: "/services/seo"
+    },
+    {
       icon: <Zap className="w-8 h-8" />,
-      title: "Консультации",
-      description: "Профессиональные консультации по вашему направлению с индивидуальным подходом и практическими рекомендациями.",
-      features: ["Индивидуальный подход", "Практические решения", "Долгосрочная поддержка"],
-      price: "от 5 000 ₽",
-      link: "/services/consultation"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Разработка решений",
-      description: "Создание эффективных решений для вашего бизнеса с учетом всех особенностей и требований.",
-      features: ["Современные технологии", "Гибкие решения", "Полная интеграция"],
+      title: "Техническая поддержка",
+      description: "Обновление, доработка и техническое сопровождение существующих сайтов.",
+      features: ["Исправление ошибок", "Обновления", "Регулярные бэкапы"],
       price: "от 15 000 ₽",
-      link: "/services/development"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Поддержка и сопровождение",
-      description: "Комплексная поддержка и сопровождение проектов на всех этапах реализации.",
-      features: ["Круглосуточная поддержка", "Регулярные обновления", "Мониторинг системы"],
-      price: "от 8 000 ₽",
       link: "/services/support"
     }
   ];
@@ -35,9 +59,9 @@ const Services = () => {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Наши услуги</h2>
+          <h2 className="text-4xl font-bold mb-4">Услуги по разработке сайтов</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Мы предлагаем полный спектр профессиональных услуг для решения ваших задач
+            Полный спектр услуг для создания и развития вашего онлайн-присутствия
           </p>
         </div>
 
@@ -88,10 +112,10 @@ const Services = () => {
             <Star className="w-8 h-8 text-yellow-300" />
           </div>
           <h3 className="text-3xl font-bold mb-4">
-            Не знаете, какая услуга вам нужна?
+            Не можете выбрать подходящую услугу?
           </h3>
           <p className="text-xl mb-8 opacity-90">
-            Получите бесплатную консультацию и мы поможем определить оптимальное решение
+            Получите бесплатную консультацию, и мы поможем определить оптимальное решение для вашего бизнеса
           </p>
           <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
             Получить консультацию
