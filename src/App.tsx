@@ -13,6 +13,9 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import Corporate from "./pages/services/Corporate";
+import Ecommerce from "./pages/services/Ecommerce";
+import Landing from "./pages/services/Landing";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +31,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/services/corporate" element={<Corporate />} />
+              <Route path="/services/ecommerce" element={<Ecommerce />} />
+              <Route path="/services/landing" element={<Landing />} />
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/blog" element={<Blog />} />

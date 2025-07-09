@@ -4,25 +4,25 @@ import { ExternalLink, Code, Smartphone, ShoppingCart } from 'lucide-react';
 const Portfolio = () => {
   const projects = [
     {
-      title: "Интернет-магазин электроники",
+      title: "Интернет-магазин электроники TechStore",
       description: "Создание современного интернет-магазина с каталогом товаров и системой заказов",
-      image: "/api/placeholder/400/300",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["React", "Node.js", "PostgreSQL"],
       category: "E-commerce",
       icon: <ShoppingCart className="w-5 h-5" />
     },
     {
-      title: "Корпоративный сайт IT-компании",
+      title: "Корпоративный сайт IT-компании DevCorp",
       description: "Разработка представительского сайта с портфолио проектов и системой управления",
-      image: "/api/placeholder/400/300",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["Vue.js", "Laravel", "MySQL"],
       category: "Corporate",
       icon: <Code className="w-5 h-5" />
     },
     {
-      title: "Landing Page для стартапа",
+      title: "Landing Page для стартапа FinTech",
       description: "Эффективная посадочная страница с высокой конверсией для привлечения инвесторов",
-      image: "/api/placeholder/400/300",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2426&q=80",
       tech: ["Next.js", "Tailwind", "Vercel"],
       category: "Landing",
       icon: <Smartphone className="w-5 h-5" />

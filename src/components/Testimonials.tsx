@@ -4,25 +4,28 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Алексей Иванов",
-      position: "Директор ООО «Техносфера»",
-      avatar: "/api/placeholder/64/64",
+      name: "Александр Петров",
+      company: "TechStore",
+      position: "Директор по маркетингу",
+      content: "Отличная работа! Наш интернет-магазин получился современным и удобным. Продажи выросли на 45% за первые 3 месяца после запуска.",
       rating: 5,
-      text: "Отличная работа! Сайт получился именно таким, как мы хотели. Команда профессиональная, сроки соблюдены, результат превзошел ожидания."
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
     },
     {
-      name: "Марина Петрова",
-      position: "Владелец интернет-магазина",
-      avatar: "/api/placeholder/64/64",
+      name: "Мария Сидорова",
+      company: "DevCorp",
+      position: "CEO",
+      content: "Профессиональный подход и внимание к деталям. Корпоративный сайт полностью соответствует нашим требованиям и превзошел ожидания.",
       rating: 5,
-      text: "Создали для нас интернет-магазин с нуля. Удобная админка, красивый дизайн, все работает быстро. Продажи выросли в 3 раза!"
+      image: "https://images.unsplash.com/photo-1494790108755-2616b332e234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
     },
     {
-      name: "Дмитрий Сидоров",
-      position: "Маркетолог",
-      avatar: "/api/placeholder/64/64",
+      name: "Дмитрий Козлов",
+      company: "FinTech Startup",
+      position: "Основатель",
+      content: "Благодаря качественному лендингу нам удалось привлечь инвесторов. Конверсия составила 12%, что значительно выше среднего по рынку.",
       rating: 5,
-      text: "Заказывали landing page для рекламной кампании. Конверсия получилась выше ожидаемой. Рекомендую для серьезных проектов."
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
     }
   ];
 
@@ -32,7 +35,7 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Отзывы клиентов</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Мнения реальных клиентов о качестве наших услуг
+            Мнения наших клиентов о качестве работы и результатах
           </p>
         </div>
 
@@ -40,31 +43,38 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="flex items-center mb-4">
-                <img 
-                  src={testimonial.avatar} 
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">{testimonial.position}</p>
-                </div>
-              </div>
-              
-              <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
               
-              <div className="relative">
-                <Quote className="w-8 h-8 text-gray-300 absolute -top-2 -left-2" />
-                <p className="text-gray-700 relative z-10 pl-6">
-                  {testimonial.text}
+              <div className="relative mb-6">
+                <Quote className="w-8 h-8 text-accent/20 absolute -top-2 -left-2" />
+                <p className="text-gray-700 italic pl-6">
+                  "{testimonial.content}"
                 </p>
+              </div>
+              
+              <div className="flex items-center">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-600">{testimonial.position}</p>
+                  <p className="text-sm text-accent">{testimonial.company}</p>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <button className="btn-primary">
+            Все отзывы
+          </button>
         </div>
       </div>
     </section>
