@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, Code2 } from 'lucide-react';
+import { Menu, X, Phone, Mail, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -38,8 +38,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors group">
-            <Code2 className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-            <span className="gradient-animate bg-clip-text text-transparent">Кирилл Ткаченко</span>
+            <Zap className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300 text-accent" />
+            <span className="gradient-animate bg-clip-text text-transparent">WebStudio Pro</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,9 +64,9 @@ const Header = () => {
               <Phone className="w-4 h-4 mr-1" />
               +7 (900) 123-45-67
             </a>
-            <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
+            <a href="mailto:info@webstudio-pro.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Mail className="w-4 h-4 mr-1" />
-              info@tkachenko-kirill.ru
+              info@webstudio-pro.ru
             </a>
           </div>
 
@@ -100,9 +100,9 @@ const Header = () => {
                   <Phone className="w-4 h-4 mr-1" />
                   +7 (900) 123-45-67
                 </a>
-                <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+                <a href="mailto:info@webstudio-pro.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
                   <Mail className="w-4 h-4 mr-1" />
-                  info@tkachenko-kirill.ru
+                  info@webstudio-pro.ru
                 </a>
               </div>
             </nav>

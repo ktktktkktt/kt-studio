@@ -1,5 +1,5 @@
 
-import { Monitor, Smartphone, Globe, ArrowRight } from 'lucide-react';
+import { Monitor, Smartphone, Globe, ArrowRight, Database, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/utils/animations';
 
@@ -48,6 +48,48 @@ const Services = () => {
       ],
       link: "/services/landing",
       gradient: "from-orange-500 to-red-600"
+    },
+    {
+      icon: <Database className="w-12 h-12" />,
+      title: "Веб-приложения",
+      description: "Современные SaaS-приложения и системы управления для автоматизации бизнес-процессов.",
+      price: "от 120 000 ₽",
+      features: [
+        "Панель администратора",
+        "API интеграции",
+        "Система уведомлений",
+        "Аналитика и отчеты"
+      ],
+      link: "/services/webapp",
+      gradient: "from-purple-500 to-pink-600"
+    },
+    {
+      icon: <Smartphone className="w-12 h-12" />,
+      title: "Мобильные приложения",
+      description: "Нативные и гибридные мобильные приложения для iOS и Android с современным UX/UI.",
+      price: "от 150 000 ₽",
+      features: [
+        "iOS и Android",
+        "Push-уведомления",
+        "Офлайн режим",
+        "App Store размещение"
+      ],
+      link: "/services/mobile",
+      gradient: "from-indigo-500 to-blue-600"
+    },
+    {
+      icon: <Settings className="w-12 h-12" />,
+      title: "Техническая поддержка",
+      description: "Обслуживание и развитие существующих проектов, исправление ошибок и добавление функций.",
+      price: "от 15 000 ₽/мес",
+      features: [
+        "24/7 мониторинг",
+        "Резервное копирование",
+        "Обновления безопасности",
+        "Техническая консультация"
+      ],
+      link: "/services/support",
+      gradient: "from-gray-500 to-slate-600"
     }
   ];
 

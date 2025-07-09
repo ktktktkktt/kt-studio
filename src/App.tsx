@@ -16,7 +16,11 @@ import NotFound from "./pages/NotFound";
 import Corporate from "./pages/services/Corporate";
 import Ecommerce from "./pages/services/Ecommerce";
 import Landing from "./pages/services/Landing";
+import WebApp from "./pages/services/WebApp";
+import Mobile from "./pages/services/Mobile";
+import Support from "./pages/services/Support";
 import TechStore from "./pages/portfolio/TechStore";
+import ModernWebsite2024 from "./pages/blog/ModernWebsite2024";
 
 const queryClient = new QueryClient();
 
@@ -35,10 +39,14 @@ const App = () => (
               <Route path="/services/corporate" element={<Corporate />} />
               <Route path="/services/ecommerce" element={<Ecommerce />} />
               <Route path="/services/landing" element={<Landing />} />
+              <Route path="/services/webapp" element={<WebApp />} />
+              <Route path="/services/mobile" element={<Mobile />} />
+              <Route path="/services/support" element={<Support />} />
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/portfolio/techstore" element={<TechStore />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/modern-website-2024" element={<ModernWebsite2024 />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
