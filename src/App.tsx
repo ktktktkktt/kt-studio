@@ -20,6 +20,17 @@ import WebApp from "./pages/services/WebApp";
 import Mobile from "./pages/services/Mobile";
 import Support from "./pages/services/Support";
 import TechStore from "./pages/portfolio/TechStore";
+import DevCorp from "./pages/portfolio/DevCorp";
+import FinTech from "./pages/portfolio/FinTech";
+import StyleShop from "./pages/portfolio/StyleShop";
+import TaskFlow from "./pages/portfolio/TaskFlow";
+import MedCenter from "./pages/portfolio/MedCenter";
+import CodeCourse from "./pages/portfolio/CodeCourse";
+import FoodExpress from "./pages/portfolio/FoodExpress";
+import HomeStore from "./pages/portfolio/HomeStore";
+import SecureBank from "./pages/portfolio/SecureBank";
+import EduPlatform from "./pages/portfolio/EduPlatform";
+import FitTracker from "./pages/portfolio/FitTracker";
 import ModernWebsite2024 from "./pages/blog/ModernWebsite2024";
 import UxUiDesignSales from "./pages/blog/UxUiDesignSales";
 import SeoEcommerceGuide from "./pages/blog/SeoEcommerceGuide";
@@ -47,6 +58,17 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/portfolio/techstore" element={<TechStore />} />
+              <Route path="/portfolio/devcorp" element={<DevCorp />} />
+              <Route path="/portfolio/fintech" element={<FinTech />} />
+              <Route path="/portfolio/styleshop" element={<StyleShop />} />
+              <Route path="/portfolio/taskflow" element={<TaskFlow />} />
+              <Route path="/portfolio/medcenter" element={<MedCenter />} />
+              <Route path="/portfolio/codecourse" element={<CodeCourse />} />
+              <Route path="/portfolio/foodexpress" element={<FoodExpress />} />
+              <Route path="/portfolio/homestore" element={<HomeStore />} />
+              <Route path="/portfolio/securebank" element={<SecureBank />} />
+              <Route path="/portfolio/eduplatform" element={<EduPlatform />} />
+              <Route path="/portfolio/fittracker" element={<FitTracker />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/modern-website-2024" element={<ModernWebsite2024 />} />
               <Route path="/blog/ux-ui-design-sales" element={<UxUiDesignSales />} />
