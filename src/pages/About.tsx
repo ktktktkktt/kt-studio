@@ -2,14 +2,16 @@ import { useScrollAnimation } from '@/utils/animations';
 import TeamCarousel from '@/components/TeamCarousel';
 
 const About = () => {
-  const heroRef = useScrollAnimation(0.1);
-  const mainRef = useScrollAnimation(0.1);
-  const teamRef = useScrollAnimation(0.1);
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.1);
+  const { ref: mainRef, isVisible: mainVisible } = useScrollAnimation(0.1);
+  const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation(0.1);
 
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="section-padding bg-gradient-to-br from-slate-50 to-blue-50 animate-on-scroll">
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-slate-50 to-blue-50 transition-all duration-1000 ${
+        heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">О нас</span>
@@ -22,7 +24,9 @@ const About = () => {
       </section>
       
       {/* Main Content */}
-      <section ref={mainRef} className="section-padding bg-white animate-on-scroll">
+      <section ref={mainRef} className={`section-padding bg-white transition-all duration-1000 ${
+        mainVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             {/* Photo and Main Info */}
@@ -84,7 +88,9 @@ const About = () => {
           </div>
 
           {/* Team Section */}
-          <div ref={teamRef} className="mb-20">
+          <div ref={teamRef} className={`mb-20 transition-all duration-1000 ${
+            teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <TeamCarousel />
           </div>
 

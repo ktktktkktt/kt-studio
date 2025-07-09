@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Award, Users, Code } from 'lucide-react';
 import { useScrollAnimation } from '@/utils/animations';
@@ -10,7 +9,7 @@ const TeamCarousel = () => {
   const team = [
     {
       name: "Кирилл Ткаченко",
-      role: "Ведущий разработчик",
+      role: "Ведущий разработчик", 
       experience: "7+ лет",
       photo: "/lovable-uploads/f507d7ba-285c-46a1-b8ed-5f6fc1bfe213.png",
       skills: ["React", "Node.js", "TypeScript", "PostgreSQL"],

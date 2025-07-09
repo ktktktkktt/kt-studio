@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export const useScrollAnimation = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,7 +32,7 @@ export const useScrollAnimation = (threshold = 0.1) => {
 
 export const useStaggerAnimation = (itemsCount: number, delay = 100) => {
   const [visibleItems, setVisibleItems] = useState(0);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,7 +66,7 @@ export const useStaggerAnimation = (itemsCount: number, delay = 100) => {
 
 export const useParallax = (speed = 0.5) => {
   const [offset, setOffset] = useState(0);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {

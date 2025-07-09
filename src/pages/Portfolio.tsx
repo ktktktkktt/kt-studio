@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ExternalLink, Code, Smartphone, ShoppingCart, Monitor, Filter, Search, Globe, Database, Zap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,9 +6,9 @@ import { useScrollAnimation } from '@/utils/animations';
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const heroRef = useScrollAnimation(0.1);
-  const filterRef = useScrollAnimation(0.1);
-  const projectsRef = useScrollAnimation(0.1);
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.1);
+  const { ref: filterRef, isVisible: filterVisible } = useScrollAnimation(0.1);
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.1);
   
   const categories = [
     { id: 'all', name: 'Все проекты', icon: <Monitor className="w-4 h-4" /> },
@@ -165,7 +164,9 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="section-padding bg-gradient-to-br from-slate-50 to-blue-50 animate-on-scroll">
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-slate-50 to-blue-50 transition-all duration-1000 ${
+        heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">Портфолио</span>
@@ -189,7 +190,9 @@ const Portfolio = () => {
       </section>
 
       {/* Filter Section */}
-      <section ref={filterRef} className="py-8 bg-white border-b animate-on-scroll">
+      <section ref={filterRef} className={`py-8 bg-white border-b transition-all duration-1000 ${
+        filterVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-6">
             <div className="flex flex-wrap justify-center gap-3">
@@ -224,7 +227,9 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Grid */}
-      <section ref={projectsRef} className="section-padding bg-white animate-on-scroll">
+      <section ref={projectsRef} className={`section-padding bg-white transition-all duration-1000 ${
+        projectsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (

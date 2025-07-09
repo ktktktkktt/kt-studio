@@ -1,16 +1,17 @@
-
 import { ArrowLeft, ExternalLink, Calendar, Users, TrendingUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/utils/animations';
 
 const TechStore = () => {
-  const heroRef = useScrollAnimation(0.1);
-  const contentRef = useScrollAnimation(0.1);
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.1);
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation(0.1);
 
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="section-padding bg-gradient-to-br from-slate-50 to-blue-50 animate-on-scroll">
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-slate-50 to-blue-50 transition-all duration-1000 ${
+        heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom">
           <Link to="/portfolio" className="inline-flex items-center text-accent hover:text-primary transition-colors mb-6">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -63,7 +64,9 @@ const TechStore = () => {
       </section>
 
       {/* Content Section */}
-      <section ref={contentRef} className="section-padding bg-white animate-on-scroll">
+      <section ref={contentRef} className={`section-padding bg-white transition-all duration-1000 ${
+        contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
