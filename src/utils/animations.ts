@@ -1,45 +1,86 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useScrollAnimation = (threshold = 0.1) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          element.classList.add('animate-in');
+          setIsVisible(true);
         }
       },
       { threshold }
     );
 
-    observer.observe(element);
-    return () => observer.disconnect();
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
   }, [threshold]);
 
-  return ref;
+  return { ref, isVisible };
+};
+
+export const useStaggerAnimation = (itemsCount: number, delay = 100) => {
+  const [visibleItems, setVisibleItems] = useState(0);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Показываем элементы с задержкой
+          for (let i = 0; i < itemsCount; i++) {
+            setTimeout(() => {
+              setVisibleItems(i + 1);
+            }, i * delay);
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [itemsCount, delay]);
+
+  return { ref, visibleItems };
 };
 
 export const useParallax = (speed = 0.5) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
     const handleScroll = () => {
-      const scrolled = window.pageYOffset;
-      const translate = scrolled * speed;
-      element.style.transform = `translateY(${translate}px)`;
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * speed;
+        setOffset(rate);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [speed]);
 
-  return ref;
+  return { ref, offset };
 };
