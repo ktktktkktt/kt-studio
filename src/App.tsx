@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import Corporate from "./pages/services/Corporate";
 import Ecommerce from "./pages/services/Ecommerce";
 import Landing from "./pages/services/Landing";
+import TechStore from "./pages/portfolio/TechStore";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/services/landing" element={<Landing />} />
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/techstore" element={<TechStore />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="*" element={<NotFound />} />

@@ -1,8 +1,15 @@
 
+import { useState } from 'react';
 import { ArrowRight, CheckCircle, Star, Monitor, Smartphone, ShoppingCart, Search, Code, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '@/utils/animations';
+import ConsultationModal from './ConsultationModal';
 
 const Services = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const titleRef = useScrollAnimation(0.1);
+  const servicesRef = useScrollAnimation(0.1);
+
   const services = [
     {
       icon: <Monitor className="w-8 h-8" />,
@@ -58,7 +65,7 @@ const Services = () => {
     <section className="section-padding bg-white">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl font-bold mb-4">Услуги по разработке сайтов</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Полный спектр услуг для создания и развития вашего онлайн-присутствия
@@ -66,10 +73,14 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div ref={servicesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-              <div className="text-accent mb-6 group-hover:scale-110 transition-transform">
+            <Link
+              key={index}
+              to={service.link}
+              className={`bg-gray-50 rounded-2xl p-8 hover-lift hover-glow transition-all duration-300 group cursor-pointer block animate-on-scroll stagger-${((index % 6) + 1)}`}
+            >
+              <div className="text-accent mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                 {service.icon}
               </div>
               
@@ -94,22 +105,19 @@ const Services = () => {
                 <span className="text-2xl font-bold text-primary">
                   {service.price}
                 </span>
-                <Link 
-                  to={service.link}
-                  className="flex items-center text-accent hover:text-primary transition-colors group"
-                >
+                <div className="flex items-center text-accent group-hover:text-primary transition-colors">
                   Подробнее
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-white">
+        <div className="text-center bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-white hover-lift">
           <div className="flex justify-center mb-4">
-            <Star className="w-8 h-8 text-yellow-300" />
+            <Star className="w-8 h-8 text-yellow-300 float-animation" />
           </div>
           <h3 className="text-3xl font-bold mb-4">
             Не можете выбрать подходящую услугу?
@@ -117,11 +125,16 @@ const Services = () => {
           <p className="text-xl mb-8 opacity-90">
             Получите бесплатную консультацию, и мы поможем определить оптимальное решение для вашего бизнеса
           </p>
-          <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors hover:scale-105 transform duration-200"
+          >
             Получить консультацию
           </button>
         </div>
       </div>
+
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

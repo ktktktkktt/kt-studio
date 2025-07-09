@@ -1,9 +1,15 @@
+import { useScrollAnimation } from '@/utils/animations';
+import TeamCarousel from '@/components/TeamCarousel';
 
 const About = () => {
+  const heroRef = useScrollAnimation(0.1);
+  const mainRef = useScrollAnimation(0.1);
+  const teamRef = useScrollAnimation(0.1);
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+      <section ref={heroRef} className="section-padding bg-gradient-to-br from-slate-50 to-blue-50 animate-on-scroll">
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">О нас</span>
@@ -16,25 +22,25 @@ const About = () => {
       </section>
       
       {/* Main Content */}
-      <section className="section-padding bg-white">
+      <section ref={mainRef} className="section-padding bg-white animate-on-scroll">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             {/* Photo and Main Info */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 slide-in-left">
               <div className="relative">
                 <img 
                   src="/lovable-uploads/f507d7ba-285c-46a1-b8ed-5f6fc1bfe213.png" 
                   alt="Кирилл Ткаченко - основатель и ведущий разработчик"
-                  className="rounded-2xl shadow-xl w-full max-w-md mx-auto"
+                  className="rounded-2xl shadow-xl w-full max-w-md mx-auto hover-lift"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-accent text-white p-4 rounded-xl shadow-lg">
+                <div className="absolute -bottom-6 -right-6 bg-accent text-white p-4 rounded-xl shadow-lg pulse-subtle">
                   <div className="text-2xl font-bold">7+</div>
                   <div className="text-sm">лет опыта</div>
                 </div>
               </div>
             </div>
             
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 slide-in-right">
               <h2 className="text-4xl font-bold mb-6">
                 Кирилл Ткаченко
               </h2>
@@ -44,36 +50,42 @@ const About = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
-                  <span className="text-gray-600">Высшее техническое образование</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
-                  <span className="text-gray-600">React/Vue.js эксперт</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
-                  <span className="text-gray-600">SEO-специалист</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
-                  <span className="text-gray-600">150+ проектов</span>
-                </div>
+                {[
+                  "Высшее техническое образование",
+                  "React/Vue.js эксперт",
+                  "SEO-специалист",
+                  "150+ проектов"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
+                    <span className="text-gray-600">{item}</span>
+                  </div>
+                ))}
               </div>
 
-              <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-6">
+              <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-6 hover-glow">
                 <h3 className="text-xl font-semibold mb-3">Экспертиза</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="text-sm text-gray-700">• Frontend разработка</div>
-                  <div className="text-sm text-gray-700">• Backend решения</div>
-                  <div className="text-sm text-gray-700">• UX/UI дизайн</div>
-                  <div className="text-sm text-gray-700">• SEO оптимизация</div>
-                  <div className="text-sm text-gray-700">• Техническая поддержка</div>
-                  <div className="text-sm text-gray-700">• Консультации</div>
+                  {[
+                    "Frontend разработка",
+                    "Backend решения",
+                    "UX/UI дизайн",
+                    "SEO оптимизация",
+                    "Техническая поддержка",
+                    "Консультации"
+                  ].map((skill, index) => (
+                    <div key={index} className="text-sm text-gray-700 hover:text-primary transition-colors">
+                      • {skill}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Team Section */}
+          <div ref={teamRef} className="mb-20">
+            <TeamCarousel />
           </div>
 
           {/* Additional Photos Section */}

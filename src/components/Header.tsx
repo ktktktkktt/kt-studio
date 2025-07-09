@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, Code2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -37,8 +37,9 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
-            Кирилл Ткаченко
+          <Link to="/" className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors group">
+            <Code2 className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="gradient-animate bg-clip-text text-transparent">Кирилл Ткаченко</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,22 +48,23 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
+                className={`text-sm font-medium transition-colors hover:text-accent relative group ${
                   location.pathname === item.href ? 'text-accent' : 'text-gray-700'
                 }`}
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
 
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+            <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Phone className="w-4 h-4 mr-1" />
               +7 (900) 123-45-67
             </a>
-            <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+            <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Mail className="w-4 h-4 mr-1" />
               info@tkachenko-kirill.ru
             </a>
@@ -71,7 +73,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 text-gray-600 hover:text-accent transition-colors"
+            className="md:hidden p-2 text-gray-600 hover:text-accent transition-colors hover:scale-110 transform duration-200"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -79,7 +81,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg animate-in slide-in-from-top-2">
             <nav className="py-4">
               {navigationItems.map((item) => (
                 <Link
