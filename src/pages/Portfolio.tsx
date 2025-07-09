@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { ExternalLink, Code, Smartphone, ShoppingCart, Monitor, Filter, Search, Globe, Database, Zap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -236,7 +237,7 @@ const Portfolio = () => {
               <Link
                 key={project.id}
                 to={project.link}
-                className={`bg-white rounded-2xl overflow-hidden shadow-lg hover-lift hover-glow transition-all duration-300 group block fade-in-up stagger-${((index % 6) + 1)}`}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group block"
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -244,15 +245,11 @@ const Portfolio = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
                     <div className="text-primary mr-2">
                       {project.icon}
                     </div>
                     <span className="text-sm font-medium">{categories.find(c => c.id === project.category)?.name}</span>
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink className="w-4 h-4 text-primary" />
                   </div>
                 </div>
                 

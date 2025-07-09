@@ -39,7 +39,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors group">
             <Zap className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300 text-accent" />
-            <span className="gradient-animate bg-clip-text text-transparent">WebStudio Pro</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-extrabold">KT Studio</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,9 +64,9 @@ const Header = () => {
               <Phone className="w-4 h-4 mr-1" />
               +7 (900) 123-45-67
             </a>
-            <a href="mailto:info@webstudio-pro.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
+            <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Mail className="w-4 h-4 mr-1" />
-              info@webstudio-pro.ru
+              info@ktstudio.ru
             </a>
           </div>
 
@@ -100,9 +100,9 @@ const Header = () => {
                   <Phone className="w-4 h-4 mr-1" />
                   +7 (900) 123-45-67
                 </a>
-                <a href="mailto:info@webstudio-pro.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+                <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
                   <Mail className="w-4 h-4 mr-1" />
-                  info@webstudio-pro.ru
+                  info@ktstudio.ru
                 </a>
               </div>
             </nav>

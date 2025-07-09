@@ -2,7 +2,11 @@
 import { ExternalLink, Code, Smartphone, ShoppingCart, Globe, Database, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Portfolio = () => {
+interface PortfolioProps {
+  showAll?: boolean;
+}
+
+const Portfolio = ({ showAll = false }: PortfolioProps) => {
   const projects = [
     {
       title: "Интернет-магазин электроники TechStore",
@@ -57,8 +61,64 @@ const Portfolio = () => {
       category: "Corporate",
       icon: <Code className="w-5 h-5" />,
       link: "/portfolio/medcenter"
+    },
+    {
+      title: "Landing Page для курсов программирования CodeCourse",
+      description: "Конверсионная посадочная страница для онлайн-курсов с видео-презентациями",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "Node.js", "Stripe"],
+      category: "Landing",
+      icon: <Smartphone className="w-5 h-5" />,
+      link: "/portfolio/codecourse"
+    },
+    {
+      title: "Мобильное приложение для доставки еды FoodExpress",
+      description: "Нативное мобильное приложение с геолокацией и отслеживанием заказов",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React Native", "Firebase", "Maps API"],
+      category: "Mobile",
+      icon: <Smartphone className="w-5 h-5" />,
+      link: "/portfolio/foodexpress"
+    },
+    {
+      title: "Интернет-магазин товаров для дома HomeStore",
+      description: "E-commerce платформа с 3D-просмотром товаров и AR-функциями",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Vue.js", "Three.js", "Node.js"],
+      category: "E-commerce",
+      icon: <ShoppingCart className="w-5 h-5" />,
+      link: "/portfolio/homestore"
+    },
+    {
+      title: "Корпоративный портал банка SecureBank",
+      description: "Безопасный корпоративный портал с системой документооборота и аналитикой",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Angular", "Spring Boot", "Oracle"],
+      category: "Corporate",
+      icon: <Code className="w-5 h-5" />,
+      link: "/portfolio/securebank"
+    },
+    {
+      title: "Веб-приложение для онлайн-обучения EduPlatform",
+      description: "Интерактивная платформа для онлайн-обучения с видеокурсами и тестированием",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "WebRTC", "Node.js"],
+      category: "WebApp",
+      icon: <Globe className="w-5 h-5" />,
+      link: "/portfolio/eduplatform"
+    },
+    {
+      title: "Мобильное приложение для фитнеса FitTracker",
+      description: "Персональный фитнес-трекер с планами тренировок и интеграцией с носимыми устройствами",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["Flutter", "Firebase", "HealthKit"],
+      category: "Mobile",
+      icon: <Smartphone className="w-5 h-5" />,
+      link: "/portfolio/fittracker"
     }
   ];
+
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section className="section-padding bg-white">
@@ -71,11 +131,11 @@ const Portfolio = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <Link 
               key={index} 
               to={project.link}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group block"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group block hover:-translate-y-2"
             >
               <div className="relative overflow-hidden">
                 <img 
@@ -117,11 +177,13 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link to="/portfolio" className="btn-primary">
-            Посмотреть все проекты
-          </Link>
-        </div>
+        {!showAll && (
+          <div className="text-center mt-12">
+            <Link to="/portfolio" className="btn-primary">
+              Посмотреть все проекты
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

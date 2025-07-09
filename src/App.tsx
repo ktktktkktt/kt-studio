@@ -21,6 +21,8 @@ import Mobile from "./pages/services/Mobile";
 import Support from "./pages/services/Support";
 import TechStore from "./pages/portfolio/TechStore";
 import ModernWebsite2024 from "./pages/blog/ModernWebsite2024";
+import UxUiDesignSales from "./pages/blog/UxUiDesignSales";
+import SeoEcommerceGuide from "./pages/blog/SeoEcommerceGuide";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +49,8 @@ const App = () => (
               <Route path="/portfolio/techstore" element={<TechStore />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/modern-website-2024" element={<ModernWebsite2024 />} />
+              <Route path="/blog/ux-ui-design-sales" element={<UxUiDesignSales />} />
+              <Route path="/blog/seo-ecommerce-guide" element={<SeoEcommerceGuide />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
