@@ -1,0 +1,114 @@
+
+import { useState, useEffect } from 'react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navigationItems = [
+    { name: 'Главная', href: '/' },
+    { name: 'Услуги', href: '/services' },
+    { name: 'О компании', href: '/about' },
+    { name: 'Портфолио', href: '/portfolio' },
+    { name: 'Блог', href: '/blog' },
+    { name: 'Контакты', href: '/contacts' },
+  ];
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    }`}>
+      <div className="container-custom">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
+            Кирилл Ткаченко
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-sm font-medium transition-colors hover:text-accent ${
+                  location.pathname === item.href ? 'text-accent' : 'text-gray-700'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Contact Info */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a href="tel:+7" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+              <Phone className="w-4 h-4 mr-1" />
+              +7 (___) ___-__-__
+            </a>
+            <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+              <Mail className="w-4 h-4 mr-1" />
+              info@tkachenko-kirill.ru
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-gray-600 hover:text-accent transition-colors"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+            <nav className="py-4">
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 hover:text-accent ${
+                    location.pathname === item.href ? 'text-accent bg-gray-50' : 'text-gray-700'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="border-t border-gray-200 mt-4 pt-4 px-4 space-y-2">
+                <a href="tel:+7" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+                  <Phone className="w-4 h-4 mr-1" />
+                  +7 (___) ___-__-__
+                </a>
+                <a href="mailto:info@tkachenko-kirill.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+                  <Mail className="w-4 h-4 mr-1" />
+                  info@tkachenko-kirill.ru
+                </a>
+              </div>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
