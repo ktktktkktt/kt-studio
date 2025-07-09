@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ExternalLink, Code, Smartphone, ShoppingCart, Monitor, Filter, Search, Globe, Database, Zap } from 'lucide-react';
+import { ExternalLink, Code, Smartphone, ShoppingCart, Monitor, Filter, Search, Globe, Database, Zap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/utils/animations';
 
