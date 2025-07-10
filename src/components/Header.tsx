@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors group">
-            <Zap className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300 text-accent" />
+            <Zap className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent" style={{ backgroundClip: 'text', WebkitBackgroundClip: 'text' }} />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-extrabold">KT Studio</span>
           </Link>
 

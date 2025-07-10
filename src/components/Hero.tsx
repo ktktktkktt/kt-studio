@@ -1,6 +1,7 @@
 
 import { ArrowRight, Play, Code, Smartphone, Search } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ConsultationModal from './ConsultationModal';
 
 const Hero = () => {
@@ -62,36 +63,36 @@ const Hero = () => {
                 Получить коммерческое предложение
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="btn-secondary flex items-center group">
+              <Link to="/portfolio" className="btn-secondary flex items-center group">
                 <Play className="w-5 h-5 mr-2" />
                 Посмотреть примеры работ
-              </button>
+              </Link>
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto animate-fade-in">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-3xl mx-auto animate-fade-in px-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">150+</div>
-                <div className="text-gray-600">Сайтов создано</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">150+</div>
+                <div className="text-sm md:text-base text-gray-600">Сайтов создано</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">7+</div>
-                <div className="text-gray-600">Лет опыта</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">7+</div>
+                <div className="text-sm md:text-base text-gray-600">Лет опыта</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                <div className="text-gray-600">Довольных клиентов</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">98%</div>
+                <div className="text-sm md:text-base text-gray-600">Довольных клиентов</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-gray-600">Поддержка</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">24/7</div>
+                <div className="text-sm md:text-base text-gray-600 break-words">Поддержка</div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll Indicator - moved higher and with better positioning */}
+        <div className="absolute bottom-16 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
           </div>

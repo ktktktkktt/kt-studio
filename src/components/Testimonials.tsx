@@ -1,5 +1,6 @@
 
 import { Star, Quote } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
   const testimonials = [
@@ -72,9 +73,9 @@ const Testimonials = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn-primary">
+          <Link to="/testimonials" className="btn-primary">
             Все отзывы
-          </button>
+          </Link>
         </div>
       </div>
     </section>

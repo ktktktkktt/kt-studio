@@ -1,12 +1,10 @@
-
 import { useState } from 'react';
-import { ExternalLink, Code, Smartphone, ShoppingCart, Monitor, Filter, Search, Globe, Database, Zap, ArrowRight } from 'lucide-react';
+import { ExternalLink, Code, Smartphone, ShoppingCart, Monitor, Filter, Globe, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/utils/animations';
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.1);
   const { ref: filterRef, isVisible: filterVisible } = useScrollAnimation(0.1);
   const { ref: projectsRef, isVisible: projectsVisible } = useScrollAnimation(0.1);
@@ -25,7 +23,7 @@ const Portfolio = () => {
       id: 1,
       title: "Интернет-магазин электроники TechStore",
       description: "Создание современного интернет-магазина с каталогом товаров, системой заказов и интеграцией с CRM",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       category: "ecommerce",
       icon: <ShoppingCart className="w-5 h-5" />,
@@ -102,7 +100,7 @@ const Portfolio = () => {
       id: 8,
       title: "Мобильное приложение для доставки еды FoodExpress",
       description: "Нативное мобильное приложение с геолокацией, отслеживанием заказов и платежами",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["React Native", "Firebase", "Maps API", "Stripe"],
       category: "mobile",
       icon: <Smartphone className="w-5 h-5" />,
@@ -113,7 +111,7 @@ const Portfolio = () => {
       id: 9,
       title: "Интернет-магазин товаров для дома HomeStore",
       description: "E-commerce платформа с 3D-просмотром товаров и AR-функциями",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["Vue.js", "Three.js", "Node.js", "PostgreSQL"],
       category: "ecommerce",
       icon: <ShoppingCart className="w-5 h-5" />,
@@ -124,7 +122,7 @@ const Portfolio = () => {
       id: 10,
       title: "Корпоративный портал банка SecureBank",
       description: "Безопасный корпоративный портал с системой документооборота и аналитикой",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["Angular", "Spring Boot", "Oracle", "Kubernetes"],
       category: "corporate",
       icon: <Code className="w-5 h-5" />,
@@ -135,7 +133,7 @@ const Portfolio = () => {
       id: 11,
       title: "Веб-приложение для онлайн-обучения EduPlatform",
       description: "Интерактивная платформа для онлайн-обучения с видеокурсами и тестированием",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["React", "WebRTC", "Node.js", "MongoDB"],
       category: "webapp",
       icon: <Globe className="w-5 h-5" />,
@@ -146,7 +144,7 @@ const Portfolio = () => {
       id: 12,
       title: "Мобильное приложение для фитнеса FitTracker",
       description: "Персональный фитнес-трекер с планами тренировок и интеграцией с носимыми устройствами",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       tech: ["Flutter", "Firebase", "HealthKit", "ML Kit"],
       category: "mobile",
       icon: <Smartphone className="w-5 h-5" />,
@@ -156,10 +154,7 @@ const Portfolio = () => {
   ];
 
   const filteredProjects = projects.filter(project => {
-    const matchesCategory = selectedCategory === 'all' || project.category === selectedCategory;
-    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return selectedCategory === 'all' || project.category === selectedCategory;
   });
 
   return (
@@ -195,34 +190,21 @@ const Portfolio = () => {
         filterVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-6">
-            <div className="flex flex-wrap justify-center gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center px-4 py-2 rounded-full font-medium transition-all hover:scale-105 ${
-                    selectedCategory === category.id
-                      ? 'bg-accent text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {category.icon}
-                  <span className="ml-2">{category.name}</span>
-                </button>
-              ))}
-            </div>
-            
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-              <input
-                type="text"
-                placeholder="Поиск проектов..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-              />
-            </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`flex items-center px-4 py-2 rounded-full font-medium transition-all hover:scale-105 ${
+                  selectedCategory === category.id
+                    ? 'bg-accent text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {category.icon}
+                <span className="ml-2">{category.name}</span>
+              </button>
+            ))}
           </div>
         </div>
       </section>
