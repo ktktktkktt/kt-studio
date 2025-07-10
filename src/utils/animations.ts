@@ -9,7 +9,10 @@ export const useScrollAnimation = (threshold = 0.1) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // Add slight delay to ensure page has scrolled to top first
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 100);
         }
       },
       { threshold }
