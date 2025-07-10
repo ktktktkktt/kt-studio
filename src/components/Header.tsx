@@ -1,7 +1,9 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, Zap } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import GradientZap from './GradientZap';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,13 +34,13 @@ const Header = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center text-2xl font-bold text-primary hover:text-accent transition-colors group">
-            <Zap className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent" style={{ backgroundClip: 'text', WebkitBackgroundClip: 'text' }} />
+            <GradientZap className="w-8 h-8 mr-2 group-hover:rotate-12 transition-transform duration-300" />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-extrabold">KT Studio</span>
           </Link>
 
@@ -49,7 +51,7 @@ const Header = () => {
                 key={item.name}
                 to={item.href}
                 className={`text-sm font-medium transition-colors hover:text-accent relative group ${
-                  location.pathname === item.href ? 'text-accent' : 'text-gray-700'
+                  location.pathname === item.href ? 'text-accent' : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
                 {item.name}
@@ -58,49 +60,53 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Contact Info */}
+          {/* Contact Info and Theme Toggle */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
+            <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Phone className="w-4 h-4 mr-1" />
               +7 (900) 123-45-67
             </a>
-            <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors hover:scale-105 transform duration-200">
+            <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Mail className="w-4 h-4 mr-1" />
               info@ktstudio.ru
             </a>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden p-2 text-gray-600 hover:text-accent transition-colors hover:scale-110 transform duration-200"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile menu button and theme toggle */}
+          <div className="flex items-center space-x-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              onClick={toggleMenu}
+              className="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-accent transition-colors hover:scale-110 transform duration-200"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg animate-in slide-in-from-top-2">
+          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg animate-in slide-in-from-top-2">
             <nav className="py-4">
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 hover:text-accent ${
-                    location.pathname === item.href ? 'text-accent bg-gray-50' : 'text-gray-700'
+                  className={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent ${
+                    location.pathname === item.href ? 'text-accent bg-gray-50 dark:bg-gray-800' : 'text-gray-700 dark:text-gray-300'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-gray-200 mt-4 pt-4 px-4 space-y-2">
-                <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+              <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 px-4 space-y-2">
+                <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">
                   <Phone className="w-4 h-4 mr-1" />
                   +7 (900) 123-45-67
                 </a>
-                <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 hover:text-accent transition-colors">
+                <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">
                   <Mail className="w-4 h-4 mr-1" />
                   info@ktstudio.ru
                 </a>

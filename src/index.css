@@ -207,6 +207,19 @@ html {
   background: #a1a1a1;
 }
 
+/* Dark theme scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6a6a6a;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #8a8a8a;
+}
+
 /* Pulse animation for loading */
 @keyframes pulse-subtle {
   0%, 100% { opacity: 1; }
