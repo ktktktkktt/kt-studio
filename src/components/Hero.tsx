@@ -1,14 +1,10 @@
-
 import { ArrowRight, Play, Code, Smartphone, Search, HelpCircle } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationModal from './ConsultationModal';
-
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  return (
-    <>
+  return <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-blue-50"></div>
@@ -61,17 +57,11 @@ const Hero = () => {
                 Пройти квиз - узнать стоимость
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button 
-                onClick={() => setIsModalOpen(true)}
-                className="btn-secondary flex items-center group"
-              >
+              <button onClick={() => setIsModalOpen(true)} className="btn-secondary flex items-center group">
                 Получить коммерческое предложение
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <Link to="/portfolio" className="btn-secondary flex items-center group">
-                <Play className="w-5 h-5 mr-2" />
-                Посмотреть примеры работ
-              </Link>
+              
             </div>
             
             {/* Stats */}
@@ -105,8 +95,6 @@ const Hero = () => {
       </section>
 
       <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </>
-  );
+    </>;
 };
-
 export default Hero;
