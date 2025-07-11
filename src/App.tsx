@@ -14,6 +14,7 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contacts from "./pages/Contacts";
 import Testimonials from "./pages/Testimonials";
+import Quiz from "./pages/Quiz";
 import NotFound from "./pages/NotFound";
 import Corporate from "./pages/services/Corporate";
 import Ecommerce from "./pages/services/Ecommerce";
@@ -85,6 +86,7 @@ const App = () => (
                 <Route path="/blog/seo-ecommerce-guide" element={<SeoEcommerceGuide />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contacts" element={<Contacts />} />
+                <Route path="/quiz" element={<Quiz />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

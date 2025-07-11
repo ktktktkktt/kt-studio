@@ -1,5 +1,5 @@
 
-import { ArrowRight, Play, Code, Smartphone, Search } from 'lucide-react';
+import { ArrowRight, Play, Code, Smartphone, Search, HelpCircle } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConsultationModal from './ConsultationModal';
@@ -56,9 +56,14 @@ const Hero = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
+              <Link to="/quiz" className="btn-primary flex items-center group">
+                <HelpCircle className="w-5 h-5 mr-2" />
+                Пройти квиз - узнать стоимость
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="btn-primary flex items-center group"
+                className="btn-secondary flex items-center group"
               >
                 Получить коммерческое предложение
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

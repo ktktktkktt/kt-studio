@@ -25,6 +25,7 @@ const Header = () => {
     { name: 'О нас', href: '/about' },
     { name: 'Портфолио', href: '/portfolio' },
     { name: 'Блог', href: '/blog' },
+    { name: 'Квиз', href: '/quiz' },
     { name: 'Контакты', href: '/contacts' },
   ];
 
