@@ -1,10 +1,10 @@
 
-import { Moon, Sun } from 'lucide-react';
+import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -19,17 +19,44 @@ const ThemeToggle = () => {
     );
   }
 
+  const cycleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else if (theme === 'dark') {
+      setTheme('system');
+    } else {
+      setTheme('light');
+    }
+  };
+
+  const getIcon = () => {
+    if (theme === 'system') {
+      return <Monitor className="w-4 h-4 text-blue-500" />;
+    } else if (theme === 'dark') {
+      return <Moon className="w-4 h-4 text-blue-400" />;
+    } else {
+      return <Sun className="w-4 h-4 text-yellow-500" />;
+    }
+  };
+
+  const getTitle = () => {
+    if (theme === 'system') {
+      return `Системная тема (${systemTheme === 'dark' ? 'темная' : 'светлая'})`;
+    } else if (theme === 'dark') {
+      return 'Темная тема';
+    } else {
+      return 'Светлая тема';
+    }
+  };
+
   return (
     <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
-      aria-label="Toggle theme"
+      onClick={cycleTheme}
+      className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+      aria-label={getTitle()}
+      title={getTitle()}
     >
-      {theme === 'dark' ? (
-        <Sun className="w-4 h-4 text-yellow-500" />
-      ) : (
-        <Moon className="w-4 h-4 text-gray-600" />
-      )}
+      {getIcon()}
     </button>
   );
 };

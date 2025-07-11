@@ -196,37 +196,37 @@ const Quiz = () => {
     const recommendations = getRecommendations();
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 section-padding">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 dark:from-background dark:via-background dark:to-primary/10 section-padding">
         <div className="container-custom max-w-4xl mx-auto">
-          <Card className="shadow-xl">
+          <Card className="shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
+              <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary" />
               </div>
               <CardTitle className="text-3xl font-bold text-gradient mb-4">
                 Результаты квиза
               </CardTitle>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <p className="text-lg text-muted-foreground">
                 На основе ваших ответов мы подготовили рекомендации
               </p>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="bg-primary/5 dark:bg-primary/10 rounded-lg p-6">
+              <div className="bg-primary/5 dark:bg-primary/10 rounded-lg p-6 border border-primary/20">
                 <h3 className="text-xl font-semibold mb-4 text-primary">
                   Рекомендуемые решения:
                 </h3>
                 <ul className="space-y-2">
                   {recommendations.map((rec, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{rec}</span>
+                      <CheckCircle className="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground">{rec}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="text-center space-y-4">
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-muted-foreground">
                   Хотите получить индивидуальное предложение?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -242,7 +242,7 @@ const Quiz = () => {
           </Card>
 
           {showContactForm && (
-            <Card className="mt-8 shadow-xl">
+            <Card className="mt-8 shadow-xl border-border/50 bg-card/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-center">
                   Оставьте контакты
@@ -321,14 +321,14 @@ const Quiz = () => {
   const currentQuestion = questions[currentStep];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 section-padding">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 dark:from-background dark:via-background dark:to-primary/10 section-padding">
       <div className="container-custom max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient">Квиз по разработке сайта</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Этот короткий квиз поможет понять ваши потребности и подобрать оптимальное решение для создания сайта
           </p>
         </div>
@@ -336,14 +336,14 @@ const Quiz = () => {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-gray-600 dark:text-gray-400">
+            <span className="text-sm text-muted-foreground">
               Вопрос {currentStep + 1} из {questions.length}
             </span>
-            <span className="text-sm text-gray-600 dark:text-gray-400">
+            <span className="text-sm text-muted-foreground">
               {Math.round(progress)}%
             </span>
           </div>
-          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+          <div className="w-full bg-secondary rounded-full h-2">
             <div
               className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-500"
               style={{ width: `${progress}%` }}
@@ -352,7 +352,7 @@ const Quiz = () => {
         </div>
 
         {/* Question Card */}
-        <Card className="shadow-xl animate-fade-in">
+        <Card className="shadow-xl animate-fade-in border-border/50 bg-card/80 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-center">
               {currentQuestion.title}
@@ -376,7 +376,7 @@ const Quiz = () => {
                             <RadioGroupItem value={option.value} id={option.value} />
                             <Label
                               htmlFor={option.value}
-                              className="text-base cursor-pointer flex-1 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                              className="text-base cursor-pointer flex-1 p-3 rounded-lg hover:bg-muted/50 transition-colors"
                             >
                               {option.label}
                             </Label>
