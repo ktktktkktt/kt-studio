@@ -58,21 +58,21 @@ const Training = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 bg-background text-foreground">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="section-padding bg-gradient-to-br from-background via-background to-primary/5 dark:from-background dark:via-background dark:to-primary/10">
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">Обучение</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Изучите веб-разработку с опытными наставниками. Практические курсы от HTML до полноценных приложений
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contacts" className="btn-primary">
+            <Link to="/contacts" className="btn-primary text-sm sm:text-base">
               Записаться на курс
             </Link>
-            <button className="btn-secondary flex items-center group">
+            <button className="btn-secondary flex items-center justify-center group text-sm sm:text-base">
               <Play className="w-5 h-5 mr-2" />
               Бесплатный урок
             </button>
@@ -81,57 +81,57 @@ const Training = () => {
       </section>
 
       {/* Courses */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Курсы</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Курсы</h2>
+            <p className="text-xl text-muted-foreground">
               Выберите курс, соответствующий вашему уровню подготовки
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {courses.map((course, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border">
+              <div key={index} className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border">
                 <div className="flex items-center justify-between mb-4">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    course.level === 'Начинающий' ? 'bg-green-100 text-green-800' :
-                    course.level === 'Средний' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-red-100 text-red-800'
+                    course.level === 'Начинающий' ? 'bg-green-500/10 text-green-600 dark:bg-green-500/20 dark:text-green-400' :
+                    course.level === 'Средний' ? 'bg-yellow-500/10 text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-400' :
+                    'bg-red-500/10 text-red-600 dark:bg-red-500/20 dark:text-red-400'
                   }`}>
                     {course.level}
                   </span>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4">{course.title}</h3>
-                <p className="text-gray-600 mb-6">{course.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-card-foreground">{course.title}</h3>
+                <p className="text-muted-foreground mb-6">{course.description}</p>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center">
                     <Clock className="w-5 h-5 text-accent mr-3" />
-                    <span className="text-gray-700">{course.duration}</span>
+                    <span className="text-card-foreground">{course.duration}</span>
                   </div>
                   <div className="flex items-center">
                     <Users className="w-5 h-5 text-accent mr-3" />
-                    <span className="text-gray-700">{course.format}</span>
+                    <span className="text-card-foreground">{course.format}</span>
                   </div>
                 </div>
                 
                 <div className="text-3xl font-bold text-primary mb-6">{course.price}</div>
                 
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Что изучим:</h4>
+                  <h4 className="font-semibold mb-3 text-card-foreground">Что изучим:</h4>
                   <ul className="space-y-2">
                     {course.topics.map((topic, i) => (
                       <li key={i} className="flex items-start">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{topic}</span>
+                        <span className="text-sm text-muted-foreground">{topic}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <Link to="/contacts" className="btn-primary w-full text-center">
+                <Link to="/contacts" className="btn-primary w-full text-center text-sm sm:text-base">
                   Записаться
                 </Link>
               </div>
@@ -141,29 +141,29 @@ const Training = () => {
       </section>
 
       {/* Formats */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-muted/30">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Форматы обучения</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Форматы обучения</h2>
+            <p className="text-xl text-muted-foreground">
               Выберите удобный для вас формат изучения материала
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {formats.map((format, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border">
                 <div className="text-accent mb-6">
                   {format.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{format.title}</h3>
-                <p className="text-gray-600 mb-6">{format.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-card-foreground">{format.title}</h3>
+                <p className="text-muted-foreground mb-6">{format.description}</p>
                 
                 <ul className="space-y-3 mb-6">
                   {format.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-card-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -176,10 +176,10 @@ const Training = () => {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Почему выбирают нас</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Почему выбирают нас</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -193,8 +193,8 @@ const Training = () => {
                 <div className="text-accent mb-4 flex justify-center">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-foreground">{benefit.title}</h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -202,7 +202,7 @@ const Training = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-accent text-white">
+      <section className="section-padding bg-gradient-to-r from-primary to-accent text-primary-foreground">
         <div className="container-custom text-center">
           <h2 className="text-4xl font-bold mb-6">
             Начните изучение веб-разработки уже сегодня
@@ -210,7 +210,7 @@ const Training = () => {
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             Запишитесь на бесплатную консультацию и получите персональный план обучения
           </p>
-          <Link to="/contacts" className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors hover:scale-105 transform duration-200 inline-flex items-center">
+          <Link to="/contacts" className="bg-background text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-background/90 transition-colors hover:scale-105 transform duration-200 inline-flex items-center text-sm sm:text-base">
             Записаться на консультацию
             <ArrowRight className="w-5 h-5 ml-2" />
           </Link>
