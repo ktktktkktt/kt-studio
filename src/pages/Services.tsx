@@ -95,25 +95,25 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="section-padding bg-gradient-to-br from-background to-muted">
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">Услуги</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Полный спектр услуг по созданию и развитию веб-проектов
           </p>
         </div>
       </section>
       
-      <section ref={servicesRef} className="section-padding bg-white">
+      <section ref={servicesRef} className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link
                 key={index}
                 to={service.link}
-                className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-gray-200 ${
+                className={`group bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border hover:border-accent/20 ${
                   servicesVisible 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
@@ -128,11 +128,11 @@ const Services = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors text-card-foreground">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 
@@ -142,14 +142,14 @@ const Services = () => {
                 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-gray-600">
+                    <li key={i} className="flex items-center text-muted-foreground">
                       <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
                 
-                <div className="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                <div className="flex items-center text-accent font-semibold group-hover:text-primary transition-colors text-sm sm:text-base">
                   Подробнее
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>

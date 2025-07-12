@@ -76,12 +76,12 @@ const Testimonials = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="section-padding bg-gradient-to-br from-background to-muted">
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">Отзывы клиентов</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Мнения наших клиентов о качестве работы и достигнутых результатах
           </p>
           
@@ -90,7 +90,7 @@ const Testimonials = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -98,11 +98,11 @@ const Testimonials = () => {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border">
                 {/* Rating */}
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -113,20 +113,20 @@ const Testimonials = () => {
                 {/* Quote */}
                 <div className="relative mb-6">
                   <Quote className="w-8 h-8 text-accent/20 absolute -top-2 -left-2" />
-                  <p className="text-gray-700 italic pl-6 leading-relaxed">
+                  <p className="text-card-foreground italic pl-6 leading-relaxed">
                     "{testimonial.content}"
                   </p>
                 </div>
                 
                 {/* Project Info */}
-                <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                <div className="bg-muted rounded-lg p-4 mb-6">
                   <div className="flex justify-between items-center">
                     <div>
-                      <div className="font-semibold text-sm text-gray-600">Проект:</div>
-                      <div className="text-gray-900">{testimonial.project}</div>
+                      <div className="font-semibold text-sm text-muted-foreground">Проект:</div>
+                      <div className="text-foreground">{testimonial.project}</div>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold text-sm text-gray-600">Результат:</div>
+                      <div className="font-semibold text-sm text-muted-foreground">Результат:</div>
                       <div className="text-accent font-bold">{testimonial.result}</div>
                     </div>
                   </div>
@@ -140,8 +140,8 @@ const Testimonials = () => {
                     className="w-12 h-12 rounded-full object-cover mr-4"
                   />
                   <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.position}</p>
+                    <h4 className="font-semibold text-card-foreground">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.position}</p>
                     <p className="text-sm text-accent">{testimonial.company}</p>
                   </div>
                 </div>
@@ -152,11 +152,11 @@ const Testimonials = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-muted">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Почему клиенты выбирают нас</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Почему клиенты выбирают нас</h2>
+            <p className="text-xl text-muted-foreground">
               Основные причины успешного сотрудничества
             </p>
           </div>
@@ -179,10 +179,10 @@ const Testimonials = () => {
                 percentage: "1 год"
               }
             ].map((item, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-lg">
+              <div key={index} className="bg-card rounded-2xl p-8 text-center shadow-lg border">
                 <div className="text-4xl font-bold text-accent mb-4">{item.percentage}</div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-bold mb-4 text-card-foreground">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
@@ -198,7 +198,7 @@ const Testimonials = () => {
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             Обсудим ваш проект и покажем, как мы можем помочь достичь ваших бизнес-целей
           </p>
-          <Link to="/contacts" className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors hover:scale-105 transform duration-200 inline-flex items-center">
+          <Link to="/contacts" className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors hover:scale-105 transform duration-200 inline-flex items-center text-sm sm:text-base">
             Обсудить проект
             <ArrowRight className="w-5 h-5 ml-2" />
           </Link>

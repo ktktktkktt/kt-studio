@@ -6,24 +6,24 @@ const Contacts = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="section-padding bg-gradient-to-br from-background to-muted">
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">Контакты</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Свяжитесь с нами для обсуждения вашего проекта
           </p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold mb-8">Как с нами связаться</h2>
+              <h2 className="text-3xl font-bold mb-8 text-foreground">Как с нами связаться</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -31,13 +31,13 @@ const Contacts = () => {
                     <Phone className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Телефон</h3>
-                    <p className="text-gray-600 mb-2">
+                    <h3 className="font-semibold text-lg mb-2 text-foreground">Телефон</h3>
+                    <p className="text-muted-foreground mb-2">
                       <a href="tel:+79001234567" className="hover:text-accent transition-colors">
                         +7 (900) 123-45-67
                       </a>
                     </p>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted-foreground">
                       Пн-Пт: 9:00-18:00, Сб: 10:00-16:00
                     </p>
                   </div>
@@ -48,13 +48,13 @@ const Contacts = () => {
                     <Mail className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Email</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-lg mb-2 text-foreground">Email</h3>
+                    <p className="text-muted-foreground">
                       <a href="mailto:info@tkachenko-kirill.ru" className="hover:text-accent transition-colors">
                         info@tkachenko-kirill.ru
                       </a>
                     </p>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted-foreground">
                       Ответим в течение 30 минут
                     </p>
                   </div>
@@ -65,9 +65,9 @@ const Contacts = () => {
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Адрес</h3>
-                    <p className="text-gray-600">г. Москва, Россия</p>
-                    <p className="text-sm text-gray-500">
+                    <h3 className="font-semibold text-lg mb-2 text-foreground">Адрес</h3>
+                    <p className="text-muted-foreground">г. Москва, Россия</p>
+                    <p className="text-sm text-muted-foreground">
                       Встречи по предварительной записи
                     </p>
                   </div>
@@ -78,22 +78,22 @@ const Contacts = () => {
                     <Clock className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Время работы</h3>
-                    <p className="text-gray-600">Пн-Пт: 9:00-18:00</p>
-                    <p className="text-gray-600">Сб: 10:00-16:00</p>
-                    <p className="text-sm text-gray-500">
+                    <h3 className="font-semibold text-lg mb-2 text-foreground">Время работы</h3>
+                    <p className="text-muted-foreground">Пн-Пт: 9:00-18:00</p>
+                    <p className="text-muted-foreground">Сб: 10:00-16:00</p>
+                    <p className="text-sm text-muted-foreground">
                       Вс: выходной
                     </p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-lg mb-3 flex items-center">
+              <div className="mt-8 p-6 bg-muted rounded-lg">
+                <h3 className="font-semibold text-lg mb-3 flex items-center text-foreground">
                   <MessageCircle className="w-5 h-5 mr-2 text-accent" />
                   Мессенджеры
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   Для быстрого общения используйте мессенджеры
                 </p>
                 <div className="flex space-x-4">
