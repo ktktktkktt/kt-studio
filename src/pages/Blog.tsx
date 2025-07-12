@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Calendar, Clock, User, Tag, Search, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -168,29 +167,29 @@ const Blog = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="section-padding bg-gradient-to-br from-background to-secondary">
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">Блог</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Экспертные статьи о веб-разработке, дизайне и digital-маркетинге
           </p>
           
           {/* Search Bar */}
           <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
             <input 
               type="text" 
               placeholder="Поиск по статьям..."
-              className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="w-full pl-12 pr-4 py-3 rounded-lg border border-border focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 bg-background text-foreground"
             />
           </div>
         </div>
       </section>
 
       {/* Categories Filter */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-card border-b border-border">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
@@ -199,8 +198,8 @@ const Blog = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
                   selectedCategory === category.id
-                    ? 'bg-accent text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-accent text-accent-foreground shadow-lg'
+                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
                 }`}
               >
                 {category.name}
@@ -211,40 +210,40 @@ const Blog = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article) => (
-              <article key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <article key={article.id} className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-border">
                 <div className="relative overflow-hidden">
                   <img 
                     src={article.image} 
                     alt={article.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                    <span className="text-sm font-medium">{categories.find(c => c.id === article.category)?.name}</span>
+                  <div className="absolute top-4 left-4 bg-card/90 backdrop-blur-sm rounded-full px-3 py-1 border border-border">
+                    <span className="text-sm font-medium text-card-foreground">{categories.find(c => c.id === article.category)?.name}</span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2 text-card-foreground">
                     {article.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
                     {article.excerpt}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {article.tags.slice(0, 3).map((tag, i) => (
-                      <span key={i} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span key={i} className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-full">
                         #{tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center">
                         <User className="w-4 h-4 mr-1" />
@@ -263,7 +262,7 @@ const Blog = () => {
                   
                   <Link 
                     to={article.link}
-                    className="flex items-center text-accent hover:text-primary transition-colors group w-full justify-center py-2 border border-accent rounded-lg hover:bg-accent hover:text-white"
+                    className="flex items-center text-accent hover:text-primary transition-colors group w-full justify-center py-2 border border-accent rounded-lg hover:bg-accent hover:text-accent-foreground"
                   >
                     Читать статью
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -276,22 +275,22 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-secondary">
         <div className="container-custom">
-          <div className="bg-white rounded-2xl p-8 text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">
+          <div className="bg-card rounded-2xl p-8 text-center max-w-2xl mx-auto border border-border">
+            <h2 className="text-3xl font-bold mb-4 text-card-foreground">
               Подпишитесь на нашу рассылку
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Получайте новые статьи и полезные материалы о веб-разработке прямо на почту
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input 
                 type="email" 
                 placeholder="Ваш email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                className="flex-1 px-4 py-3 rounded-lg border border-border focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 bg-background text-foreground"
               />
-              <button className="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+              <button className="bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
                 Подписаться
               </button>
             </div>
