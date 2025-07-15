@@ -8,7 +8,7 @@ const FinTech = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-slate-50 to-blue-50 transition-all duration-1000 ${
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-background to-muted transition-all duration-1000 ${
         heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
@@ -22,22 +22,22 @@ const FinTech = () => {
               <h1 className="text-5xl font-bold mb-6">
                 Landing Page для стартапа <span className="text-gradient">FinTech</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-muted-foreground mb-8">
                 Эффективная посадочная страница с высокой конверсией для привлечения инвесторов и клиентов
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center bg-white rounded-lg p-4">
+                <div className="text-center bg-card rounded-lg p-4">
                   <div className="text-2xl font-bold text-accent">12%</div>
-                  <div className="text-sm text-gray-600">Конверсия</div>
+                  <div className="text-sm text-muted-foreground">Конверсия</div>
                 </div>
-                <div className="text-center bg-white rounded-lg p-4">
+                <div className="text-center bg-card rounded-lg p-4">
                   <div className="text-2xl font-bold text-primary">1.2с</div>
-                  <div className="text-sm text-gray-600">Скорость загрузки</div>
+                  <div className="text-sm text-muted-foreground">Скорость загрузки</div>
                 </div>
-                <div className="text-center bg-white rounded-lg p-4">
+                <div className="text-center bg-card rounded-lg p-4">
                   <div className="text-2xl font-bold text-accent">$500K</div>
-                  <div className="text-sm text-gray-600">Привлечено инвестиций</div>
+                  <div className="text-sm text-muted-foreground">Привлечено инвестиций</div>
                 </div>
               </div>
             </div>

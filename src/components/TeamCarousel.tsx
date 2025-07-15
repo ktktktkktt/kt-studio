@@ -68,18 +68,18 @@ const TeamCarousel = () => {
   const currentMember = team[currentIndex];
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-blue-50 py-16" ref={ref}>
+    <div className="bg-gradient-to-br from-background to-muted py-16" ref={ref}>
       <div className="container-custom">
         <div className={`text-center mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <h2 className="text-4xl font-bold mb-4">Наша команда</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Профессионалы, которые создают выдающиеся решения
           </p>
         </div>
 
-        <div className={`bg-white rounded-3xl shadow-2xl p-8 max-w-4xl mx-auto transition-all duration-1000 ${
+        <div className={`bg-card rounded-3xl shadow-2xl p-8 max-w-4xl mx-auto transition-all duration-1000 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -98,20 +98,20 @@ const TeamCarousel = () => {
               
               <h3 className="text-2xl font-bold mb-2">{currentMember.name}</h3>
               <p className="text-accent text-lg font-semibold mb-2">{currentMember.role}</p>
-              <p className="text-gray-600 mb-4">{currentMember.specialization}</p>
+              <p className="text-muted-foreground mb-4">{currentMember.specialization}</p>
               
               <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-4">
                 {currentMember.skills.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
               
-              <div className="flex items-center justify-center md:justify-start space-x-4 text-sm text-gray-600">
+              <div className="flex items-center justify-center md:justify-start space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <Award className="w-4 h-4 mr-1" />
                   {currentMember.experience}
@@ -129,7 +129,7 @@ const TeamCarousel = () => {
 
             {/* Описание и достижения */}
             <div>
-              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+              <p className="text-foreground mb-6 text-lg leading-relaxed">
                 {currentMember.description}
               </p>
               
@@ -142,7 +142,7 @@ const TeamCarousel = () => {
                   {currentMember.achievements.map((achievement, index) => (
                     <li key={index} className="flex items-start">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-gray-600">{achievement}</span>
+                      <span className="text-muted-foreground">{achievement}</span>
                     </li>
                   ))}
                 </ul>
@@ -154,9 +154,9 @@ const TeamCarousel = () => {
           <div className="flex justify-between items-center mt-8">
             <button
               onClick={prevSlide}
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-muted hover:bg-muted/80 transition-colors duration-200"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
+              <ChevronLeft className="w-6 h-6 text-muted-foreground" />
             </button>
             
             <div className="flex space-x-2">
@@ -165,7 +165,7 @@ const TeamCarousel = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    index === currentIndex ? 'bg-primary' : 'bg-gray-300'
+                    index === currentIndex ? 'bg-primary' : 'bg-muted'
                   }`}
                 />
               ))}
@@ -173,9 +173,9 @@ const TeamCarousel = () => {
             
             <button
               onClick={nextSlide}
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-muted hover:bg-muted/80 transition-colors duration-200"
             >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
+              <ChevronRight className="w-6 h-6 text-muted-foreground" />
             </button>
           </div>
         </div>

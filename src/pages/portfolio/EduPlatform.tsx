@@ -11,7 +11,7 @@ const EduPlatform = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-slate-50 to-blue-50 transition-all duration-1000 ${
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-background to-muted transition-all duration-1000 ${
         heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
@@ -25,10 +25,10 @@ const EduPlatform = () => {
               <h1 className="text-5xl font-bold mb-6">
                 Веб-приложение для онлайн-обучения <span className="text-gradient">EduPlatform</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-muted-foreground mb-8">
                 Интерактивная образовательная платформа с видеокурсами, тестированием и системой сертификации
               </p>
-              <div className="flex items-center space-x-6 text-sm text-gray-600 mb-8">
+              <div className="flex items-center space-x-6 text-sm text-muted-foreground mb-8">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>2024</span>
@@ -64,14 +64,14 @@ const EduPlatform = () => {
       </section>
 
       {/* Project Details */}
-      <section ref={detailsRef} className={`section-padding bg-white transition-all duration-1000 ${
+      <section ref={detailsRef} className={`section-padding bg-background transition-all duration-1000 ${
         detailsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold mb-6">О проекте</h2>
-              <div className="prose prose-lg max-w-none text-gray-600">
+              <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p>
                   EduPlatform - это современная образовательная платформа, созданная для учебных заведений и 
                   корпоративного обучения. Платформа объединяет лучшие практики онлайн-образования и современные 
@@ -110,7 +110,7 @@ const EduPlatform = () => {
             </div>
             
             <div>
-              <div className="bg-gray-50 rounded-2xl p-6 mb-6">
+              <div className="bg-muted rounded-2xl p-6 mb-6">
                 <h3 className="text-xl font-semibold mb-4">Технологии</h3>
                 <div className="space-y-3">
                   <div className="flex items-center">
@@ -172,26 +172,26 @@ const EduPlatform = () => {
       </section>
 
       {/* Results */}
-      <section ref={resultsRef} className={`section-padding bg-gray-50 transition-all duration-1000 ${
+      <section ref={resultsRef} className={`section-padding bg-muted transition-all duration-1000 ${
         resultsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-center mb-12">Результаты проекта</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-white rounded-2xl p-8 shadow-sm">
+            <div className="text-center bg-card rounded-2xl p-8 shadow-sm">
               <div className="text-4xl font-bold text-accent mb-2">100K+</div>
               <div className="text-lg font-semibold mb-2">Студентов</div>
-              <div className="text-gray-600">Зарегистрированных на платформе</div>
+              <div className="text-muted-foreground">Зарегистрированных на платформе</div>
             </div>
-            <div className="text-center bg-white rounded-2xl p-8 shadow-sm">
+            <div className="text-center bg-card rounded-2xl p-8 shadow-sm">
               <div className="text-4xl font-bold text-primary mb-2">78%</div>
               <div className="text-lg font-semibold mb-2">Завершение курсов</div>
-              <div className="text-gray-600">Студентов успешно заканчивают обучение</div>
+              <div className="text-muted-foreground">Студентов успешно заканчивают обучение</div>
             </div>
-            <div className="text-center bg-white rounded-2xl p-8 shadow-sm">
+            <div className="text-center bg-card rounded-2xl p-8 shadow-sm">
               <div className="text-4xl font-bold text-accent mb-2">4.9★</div>
               <div className="text-lg font-semibold mb-2">Средняя оценка</div>
-              <div className="text-gray-600">Отзывы студентов о платформе</div>
+              <div className="text-muted-foreground">Отзывы студентов о платформе</div>
             </div>
           </div>
         </div>

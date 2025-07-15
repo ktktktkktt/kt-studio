@@ -48,7 +48,7 @@ const About = () => {
   ];
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-background">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -56,7 +56,7 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-6">
               Почему выбирают нас для создания сайтов?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Мы создаем не просто сайты, а эффективные инструменты для развития вашего бизнеса. 
               Каждый проект - это индивидуальный подход и качественное решение.
             </p>
@@ -71,15 +71,15 @@ const About = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">{advantage.title}</h3>
-                    <p className="text-gray-600">{advantage.description}</p>
+                    <p className="text-muted-foreground">{advantage.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
+            <div className="mt-8 p-6 bg-card rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg mb-3">Наши принципы работы</h3>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-2 text-muted-foreground">
                 <li>• Точное соблюдение сроков и бюджета</li>
                 <li>• Регулярная отчетность о ходе работ</li>
                 <li>• Использование современных технологий</li>
@@ -92,17 +92,17 @@ const About = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="text-center bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-accent mb-4 flex justify-center">
                   {stat.icon}
                 </div>
                 <div className="text-3xl font-bold text-primary mb-2">
                   {stat.number}
                 </div>
-                <div className="font-semibold text-gray-900 mb-1">
+                <div className="font-semibold text-foreground mb-1">
                   {stat.label}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-muted-foreground">
                   {stat.description}
                 </div>
               </div>
