@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const StyleShop = () => {
   return (
     <div className="min-h-screen pt-16">
-      <div className="section-padding bg-white">
+      <div className="section-padding bg-background">
         <div className="container-custom max-w-4xl">
           <Link to="/portfolio" className="inline-flex items-center text-accent hover:text-primary transition-colors mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -13,7 +13,7 @@ const StyleShop = () => {
           </Link>
 
           <header className="mb-12">
-            <div className="flex items-center text-gray-600 text-sm mb-4">
+            <div className="flex items-center text-muted-foreground text-sm mb-4">
               <Calendar className="w-4 h-4 mr-1" />
               <span className="mr-4">Завершен в сентябре 2023</span>
               <Clock className="w-4 h-4 mr-1" />
@@ -24,7 +24,7 @@ const StyleShop = () => {
               Интернет-магазин модной одежды StyleShop
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Создание стильного интернет-магазина модной одежды с продвинутой системой фильтрации, персонализацией и интеграцией с социальными сетями
             </p>
 
@@ -60,20 +60,20 @@ const StyleShop = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-6 bg-gray-50 rounded-2xl">
+                <div className="text-center p-6 bg-muted rounded-2xl">
                   <TrendingUp className="w-8 h-8 text-accent mx-auto mb-3" />
                   <div className="text-2xl font-bold text-primary mb-1">+35%</div>
-                  <div className="text-sm text-gray-600">Увеличение AOV</div>
+                  <div className="text-sm text-muted-foreground">Увеличение AOV</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-2xl">
+                <div className="text-center p-6 bg-muted rounded-2xl">
                   <Users className="w-8 h-8 text-accent mx-auto mb-3" />
                   <div className="text-2xl font-bold text-primary mb-1">+40%</div>
-                  <div className="text-sm text-gray-600">Повторные покупки</div>
+                  <div className="text-sm text-muted-foreground">Повторные покупки</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-2xl">
+                <div className="text-center p-6 bg-muted rounded-2xl">
                   <Smartphone className="w-8 h-8 text-accent mx-auto mb-3" />
                   <div className="text-2xl font-bold text-primary mb-1">80%</div>
-                  <div className="text-sm text-gray-600">Мобильные продажи</div>
+                  <div className="text-sm text-muted-foreground">Мобильные продажи</div>
                 </div>
               </div>
 
@@ -81,33 +81,33 @@ const StyleShop = () => {
               <div className="space-y-4 mb-8">
                 <div className="border-l-4 border-accent pl-4">
                   <h4 className="font-semibold mb-2">Умная система фильтрации</h4>
-                  <p className="text-gray-600">Многоуровневые фильтры по размеру, цвету, бренду, цене с мгновенной обратной связью</p>
+                  <p className="text-muted-foreground">Многоуровневые фильтры по размеру, цвету, бренду, цене с мгновенной обратной связью</p>
                 </div>
                 <div className="border-l-4 border-accent pl-4">
                   <h4 className="font-semibold mb-2">Персонализация</h4>
-                  <p className="text-gray-600">Система рекомендаций на основе истории просмотров и покупок</p>
+                  <p className="text-muted-foreground">Система рекомендаций на основе истории просмотров и покупок</p>
                 </div>
                 <div className="border-l-4 border-accent pl-4">
                   <h4 className="font-semibold mb-2">Social Commerce</h4>
-                  <p className="text-gray-600">Интеграция с Instagram, возможность покупки через соцсети</p>
+                  <p className="text-muted-foreground">Интеграция с Instagram, возможность покупки через соцсети</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <div className="bg-gray-50 p-6 rounded-2xl mb-6">
+              <div className="bg-muted p-6 rounded-2xl mb-6">
                 <h3 className="text-lg font-semibold mb-4">Технологии</h3>
                 <div className="space-y-2">
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-sm">React</span>
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-sm ml-2">GraphQL</span>
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-sm">MongoDB</span>
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-sm ml-2">Shopify</span>
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-sm">Algolia</span>
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-sm ml-2">Stripe</span>
+                  <span className="inline-block bg-background px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="inline-block bg-background px-3 py-1 rounded-full text-sm ml-2">GraphQL</span>
+                  <span className="inline-block bg-background px-3 py-1 rounded-full text-sm">MongoDB</span>
+                  <span className="inline-block bg-background px-3 py-1 rounded-full text-sm ml-2">Shopify</span>
+                  <span className="inline-block bg-background px-3 py-1 rounded-full text-sm">Algolia</span>
+                  <span className="inline-block bg-background px-3 py-1 rounded-full text-sm ml-2">Stripe</span>
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-2xl mb-6">
+              <div className="bg-muted p-6 rounded-2xl mb-6">
                 <h3 className="text-lg font-semibold mb-4">Результаты</h3>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
@@ -129,9 +129,9 @@ const StyleShop = () => {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-2xl">
+              <div className="bg-muted p-6 rounded-2xl">
                 <h3 className="text-lg font-semibold mb-4">Клиент</h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-muted-foreground mb-4">
                   StyleShop — молодой бренд модной одежды, ориентированный на активных городских жителей 20-35 лет.
                 </p>
                 <a href="#" className="inline-flex items-center text-accent hover:text-primary transition-colors text-sm font-medium">

@@ -9,7 +9,7 @@ const TechStore = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-slate-50 to-blue-50 transition-all duration-1000 ${
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-background to-muted transition-all duration-1000 ${
         heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
@@ -23,16 +23,16 @@ const TechStore = () => {
               <h1 className="text-4xl font-bold mb-4">
                 Интернет-магазин электроники TechStore
               </h1>
-              <p className="text-xl text-gray-600 mb-6">
+              <p className="text-xl text-muted-foreground mb-6">
                 Современный интернет-магазин с каталогом товаров, системой заказов и интеграцией с CRM
               </p>
               
               <div className="flex items-center gap-6 mb-6">
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-muted-foreground">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>Февраль 2024</span>
                 </div>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-muted-foreground">
                   <Users className="w-4 h-4 mr-2" />
                   <span>E-commerce</span>
                 </div>
@@ -64,7 +64,7 @@ const TechStore = () => {
       </section>
 
       {/* Content Section */}
-      <section ref={contentRef} className={`section-padding bg-white transition-all duration-1000 ${
+      <section ref={contentRef} className={`section-padding bg-background transition-all duration-1000 ${
         contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <div className="container-custom">
@@ -72,7 +72,7 @@ const TechStore = () => {
             {/* Main Content */}
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold mb-6">О проекте</h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-muted-foreground mb-6">
                 TechStore - это современный интернет-магазин электроники, созданный с использованием 
                 передовых веб-технологий. Проект включает в себя полнофункциональную систему управления 
                 товарами, корзину покупок, систему оплаты и интеграцию с CRM.
@@ -99,7 +99,7 @@ const TechStore = () => {
               </ul>
               
               <h3 className="text-2xl font-bold mb-4">Решение</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Мы создали полноценный интернет-магазин с современным дизайном и интуитивно понятным 
                 интерфейсом. Использовали React для фронтенда и Node.js для бэкенда, что обеспечило 
                 высокую производительность и масштабируемость.
@@ -121,39 +121,39 @@ const TechStore = () => {
             
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-xl p-6 hover-glow">
+              <div className="bg-muted rounded-xl p-6 hover-glow">
                 <h3 className="text-xl font-bold mb-4">Технологии</h3>
                 <div className="flex flex-wrap gap-2">
                   {["React", "Node.js", "PostgreSQL", "Stripe", "Docker", "AWS"].map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full">
+                    <span key={tech} className="px-3 py-1 bg-background text-foreground text-sm rounded-full">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
               
-              <div className="bg-gray-50 rounded-xl p-6 hover-glow">
+              <div className="bg-muted rounded-xl p-6 hover-glow">
                 <h3 className="text-xl font-bold mb-4">Результаты</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <TrendingUp className="w-5 h-5 text-green-500 mr-3" />
                     <div>
                       <div className="font-semibold">+45%</div>
-                      <div className="text-sm text-gray-600">Рост продаж</div>
+                      <div className="text-sm text-muted-foreground">Рост продаж</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Users className="w-5 h-5 text-blue-500 mr-3" />
                     <div>
                       <div className="font-semibold">70%</div>
-                      <div className="text-sm text-gray-600">Мобильный трафик</div>
+                      <div className="text-sm text-muted-foreground">Мобильный трафик</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 text-yellow-500 mr-3" />
                     <div>
                       <div className="font-semibold">-30%</div>
-                      <div className="text-sm text-gray-600">Снижение отказов</div>
+                      <div className="text-sm text-muted-foreground">Снижение отказов</div>
                     </div>
                   </div>
                 </div>
