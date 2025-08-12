@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SeoEcommerceGuide = () => {
   return (
     <div className="min-h-screen pt-16">
-      <article className="section-padding bg-white">
+      <article className="section-padding bg-background">
         <div className="container-custom max-w-4xl">
           <Link to="/blog" className="inline-flex items-center text-accent hover:text-primary transition-colors mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -40,7 +40,7 @@ const SeoEcommerceGuide = () => {
           </header>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               SEO для интернет-магазинов имеет свои особенности. Важно не только привлечь трафик, но и привести именно тех покупателей, которые готовы совершить покупку. Рассказываем о стратегиях продвижения e-commerce проектов.
             </p>
 
@@ -72,7 +72,7 @@ const SeoEcommerceGuide = () => {
               Каждая карточка товара — это потенциальная страница для привлечения трафика. Используйте уникальные описания, качественные фото, отзывы покупателей.
             </p>
 
-            <div className="bg-blue-50 p-6 rounded-2xl mt-6">
+            <div className="bg-secondary p-6 rounded-2xl mt-6">
               <h4 className="font-semibold mb-2">Структура title для товара:</h4>
               <code>Название товара - Бренд - Купить в Городе | Название магазина</code>
             </div>
@@ -87,7 +87,7 @@ const SeoEcommerceGuide = () => {
               Если у вас есть офлайн точки продаж, обязательно настройте локальное SEO. Зарегистрируйтесь в Google My Business, Яндекс.Справочнике, собирайте отзывы.
             </p>
 
-            <div className="bg-gray-50 p-6 rounded-2xl mt-8">
+            <div className="bg-muted p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Ключевые метрики</h3>
               <ul>
                 <li>Органический трафик</li>
@@ -99,11 +99,11 @@ const SeoEcommerceGuide = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-8 mt-8 border-t">
+          <div className="flex items-center justify-between pt-8 mt-8 border-t border-border">
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#SEO</span>
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#E-commerce</span>
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Marketing</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#SEO</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#E-commerce</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#Marketing</span>
             </div>
             
             <button className="flex items-center text-accent hover:text-primary transition-colors">

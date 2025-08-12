@@ -24,7 +24,7 @@ const ModernWebsite2024 = () => {
             Как создать современный сайт в 2024 году: полное руководство
           </h1>
           
-          <div className="flex items-center justify-between text-gray-600 mb-8">
+          <div className="flex items-center justify-between text-muted-foreground mb-8">
             <div className="flex items-center space-x-6">
               <div className="flex items-center">
                 <User className="w-4 h-4 mr-2" />
@@ -48,7 +48,7 @@ const ModernWebsite2024 = () => {
 
         {/* Article Content */}
         <article className="prose prose-lg max-w-none">
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             В 2024 году создание современного сайта требует комплексного подхода, учитывающего последние тенденции в веб-разработке, дизайне и пользовательском опыте. В этом руководстве мы разберем все ключевые аспекты создания сайта, который будет успешно работать в современных реалиях.
           </p>
 
@@ -140,7 +140,7 @@ const ModernWebsite2024 = () => {
         {/* Tags */}
         <div className="flex flex-wrap gap-3 mt-12 mb-12">
           {['React', 'JavaScript', 'Web Development', 'UX/UI', 'SEO'].map((tag, index) => (
-            <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+            <span key={index} className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm">
               #{tag}
             </span>
           ))}
@@ -152,7 +152,7 @@ const ModernWebsite2024 = () => {
           <p className="mb-6 opacity-90">
             Мы создадим для вас сайт по всем современным стандартам
           </p>
-          <Link to="/contacts" className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <Link to="/contacts" className="bg-background text-primary border border-border px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-colors">
             Обсудить проект
           </Link>
         </div>

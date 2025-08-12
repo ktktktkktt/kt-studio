@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
+import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -40,12 +41,21 @@ import FitTracker from "./pages/portfolio/FitTracker";
 import ModernWebsite2024 from "./pages/blog/ModernWebsite2024";
 import UxUiDesignSales from "./pages/blog/UxUiDesignSales";
 import SeoEcommerceGuide from "./pages/blog/SeoEcommerceGuide";
+import ReactVsVueVsAngular from "./pages/blog/ReactVsVueVsAngular";
+import MobileOptimizationBusiness from "./pages/blog/MobileOptimizationBusiness";
+import WebSecurityGuide from "./pages/blog/WebSecurityGuide";
+import ProgressiveWebApps from "./pages/blog/ProgressiveWebApps";
+import ConversionDesign from "./pages/blog/ConversionDesign";
+import HeadlessCMS from "./pages/blog/HeadlessCMS";
+import MicroanimationsUX from "./pages/blog/MicroanimationsUX";
+import TypeScript2024 from "./pages/blog/TypeScript2024";
+import EcommerceTrends2024 from "./pages/blog/EcommerceTrends2024";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <HelmetProvider><ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -84,6 +94,15 @@ const App = () => (
                 <Route path="/blog/modern-website-2024" element={<ModernWebsite2024 />} />
                 <Route path="/blog/ux-ui-design-sales" element={<UxUiDesignSales />} />
                 <Route path="/blog/seo-ecommerce-guide" element={<SeoEcommerceGuide />} />
+                <Route path="/blog/react-vs-vue-vs-angular" element={<ReactVsVueVsAngular />} />
+                <Route path="/blog/mobile-optimization-business" element={<MobileOptimizationBusiness />} />
+                <Route path="/blog/web-security-guide" element={<WebSecurityGuide />} />
+                <Route path="/blog/progressive-web-apps" element={<ProgressiveWebApps />} />
+                <Route path="/blog/conversion-design" element={<ConversionDesign />} />
+                <Route path="/blog/headless-cms" element={<HeadlessCMS />} />
+                <Route path="/blog/microanimations-ux" element={<MicroanimationsUX />} />
+                <Route path="/blog/typescript-2024" element={<TypeScript2024 />} />
+                <Route path="/blog/ecommerce-trends-2024" element={<EcommerceTrends2024 />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/quiz" element={<Quiz />} />
@@ -94,7 +113,7 @@ const App = () => (
           </div>
         </BrowserRouter>
       </TooltipProvider>
-    </ThemeProvider>
+    </ThemeProvider></HelmetProvider>
   </QueryClientProvider>
 );
 

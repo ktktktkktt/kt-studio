@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const UxUiDesignSales = () => {
   return (
     <div className="min-h-screen pt-16">
-      <article className="section-padding bg-white">
+      <article className="section-padding bg-background">
         <div className="container-custom max-w-4xl">
           <Link to="/blog" className="inline-flex items-center text-accent hover:text-primary transition-colors mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -17,7 +17,7 @@ const UxUiDesignSales = () => {
               UX/UI дизайн: как создать интерфейс, который продает
             </h1>
             
-            <div className="flex items-center text-gray-600 text-sm mb-6">
+            <div className="flex items-center text-muted-foreground text-sm mb-6">
               <div className="flex items-center mr-6">
                 <User className="w-4 h-4 mr-1" />
                 <span>Кирилл Ткаченко</span>
@@ -40,7 +40,7 @@ const UxUiDesignSales = () => {
           </header>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Хороший UX/UI дизайн — это не просто красивые картинки. Это система, которая направляет пользователя к целевому действию и увеличивает конверсию. В этой статье разберем принципы создания интерфейсов, которые реально продают.
             </p>
 
@@ -79,7 +79,7 @@ const UxUiDesignSales = () => {
               Даже самый продуманный дизайн нужно тестировать. Используйте A/B тесты, анализируйте тепловые карты, собирайте обратную связь от пользователей. Данные покажут, что действительно работает.
             </p>
 
-            <div className="bg-gray-50 p-6 rounded-2xl mt-8">
+            <div className="bg-muted p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Заключение</h3>
               <p>
                 Создание конверсионного дизайна — это итеративный процесс, основанный на понимании пользователей и постоянном тестировании. Помните: лучший дизайн тот, который незаметно ведет пользователя к цели.
@@ -87,12 +87,12 @@ const UxUiDesignSales = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-8 mt-8 border-t">
+          <div className="flex items-center justify-between pt-8 mt-8 border-t border-border">
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#UX</span>
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#UI</span>
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Design</span>
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">#Conversion</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#UX</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#UI</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#Design</span>
+              <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">#Conversion</span>
             </div>
             
             <button className="flex items-center text-accent hover:text-primary transition-colors">
