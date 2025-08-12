@@ -252,7 +252,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              rows={4]
+              rows={4}
               className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none bg-background text-foreground"
               placeholder="Расскажите о вашем проекте..."
             />
