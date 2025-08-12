@@ -1,18 +1,21 @@
-
 import { useScrollAnimation } from '@/utils/animations';
 import TeamCarousel from '@/components/TeamCarousel';
-
 const About = () => {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.1);
-  const { ref: mainRef, isVisible: mainVisible } = useScrollAnimation(0.1);
-  const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation(0.1);
-
-  return (
-    <div className="min-h-screen pt-16">
+  const {
+    ref: heroRef,
+    isVisible: heroVisible
+  } = useScrollAnimation(0.1);
+  const {
+    ref: mainRef,
+    isVisible: mainVisible
+  } = useScrollAnimation(0.1);
+  const {
+    ref: teamRef,
+    isVisible: teamVisible
+  } = useScrollAnimation(0.1);
+  return <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-background to-muted transition-all duration-1000 ${
-        heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}>
+      <section ref={heroRef} className={`section-padding bg-gradient-to-br from-background to-muted transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container-custom text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="text-gradient">О нас</span>
@@ -25,19 +28,13 @@ const About = () => {
       </section>
       
       {/* Main Content */}
-      <section ref={mainRef} className={`section-padding bg-background transition-all duration-1000 ${
-        mainVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}>
+      <section ref={mainRef} className={`section-padding bg-background transition-all duration-1000 ${mainVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             {/* Photo and Main Info */}
             <div className="order-2 lg:order-1">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/f507d7ba-285c-46a1-b8ed-5f6fc1bfe213.png" 
-                  alt="Кирилл Ткаченко - основатель и ведущий разработчик"
-                  className="rounded-2xl shadow-xl w-full max-w-md mx-auto"
-                />
+                <img src="/lovable-uploads/f507d7ba-285c-46a1-b8ed-5f6fc1bfe213.png" alt="Кирилл Ткаченко - основатель и ведущий разработчик" className="rounded-2xl shadow-xl w-full max-w-md mx-auto" />
                 <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground p-4 rounded-xl shadow-lg">
                   <div className="text-2xl font-bold">7+</div>
                   <div className="text-sm">лет опыта</div>
@@ -55,43 +52,25 @@ const About = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                {[
-                  "Высшее техническое образование",
-                  "React/Vue.js эксперт",
-                  "SEO-специалист",
-                  "200+ проектов"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center">
+                {["Высшее техническое образование", "React/Vue.js эксперт", "SEO-специалист", "200+ проектов"].map((item, index) => <div key={index} className="flex items-center">
                     <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
                     <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-6">
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Экспертиза</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {[
-                    "Frontend разработка",
-                    "Backend решения",
-                    "UX/UI дизайн",
-                    "SEO оптимизация",
-                    "Техническая поддержка",
-                    "Консультации"
-                  ].map((skill, index) => (
-                    <div key={index} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {["Frontend разработка", "Backend решения", "UX/UI дизайн", "SEO оптимизация", "Техническая поддержка", "Консультации"].map((skill, index) => <div key={index} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       • {skill}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Team Section */}
-          <div ref={teamRef} className={`mb-20 transition-all duration-1000 ${
-            teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          <div ref={teamRef} className={`mb-20 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <TeamCarousel />
           </div>
 
@@ -133,16 +112,8 @@ const About = () => {
             </div>
             
             <div className="space-y-6">
-              <img 
-                src="/lovable-uploads/d80f070f-b50e-457b-842b-76f9bb0abc06.png" 
-                alt="Кирилл Ткаченко в работе"
-                className="rounded-xl shadow-lg w-full"
-              />
-              <img 
-                src="/lovable-uploads/725206b9-886c-4939-86fb-0cc4f4b4de50.png" 
-                alt="Кирилл Ткаченко - креативный подход"
-                className="rounded-xl shadow-lg w-full"
-              />
+              
+              <img src="/lovable-uploads/725206b9-886c-4939-86fb-0cc4f4b4de50.png" alt="Кирилл Ткаченко - креативный подход" className="rounded-xl shadow-lg w-full" />
             </div>
           </div>
 
@@ -259,8 +230,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
