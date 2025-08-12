@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
@@ -63,11 +63,11 @@ const Header = () => {
 
           {/* Contact Info and Theme Toggle */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors hover:scale-105 transform duration-200">
+            <a href="tel:+79001234567" className="flex items-center text-sm text-muted-foreground hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Phone className="w-4 h-4 mr-1" />
               +7 (900) 123-45-67
             </a>
-            <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors hover:scale-105 transform duration-200">
+            <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-muted-foreground hover:text-accent transition-colors hover:scale-105 transform duration-200">
               <Mail className="w-4 h-4 mr-1" />
               info@ktstudio.ru
             </a>
@@ -79,7 +79,7 @@ const Header = () => {
             <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-accent transition-colors hover:scale-110 transform duration-200"
+              className="md:hidden p-2 text-muted-foreground hover:text-accent transition-colors hover:scale-110 transform duration-200"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -88,26 +88,26 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg animate-in slide-in-from-top-2">
+          <div className="md:hidden bg-card border-t border-border shadow-lg animate-in slide-in-from-top-2">
             <nav className="py-4">
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent ${
-                    location.pathname === item.href ? 'text-accent bg-gray-50 dark:bg-gray-800' : 'text-gray-700 dark:text-gray-300'
+                  className={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent ${
+                    location.pathname === item.href ? 'text-accent bg-muted' : 'text-muted-foreground'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 px-4 space-y-2">
-                <a href="tel:+79001234567" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">
+              <div className="border-t border-border mt-4 pt-4 px-4 space-y-2">
+                <a href="tel:+79001234567" className="flex items-center text-sm text-muted-foreground hover:text-accent transition-colors">
                   <Phone className="w-4 h-4 mr-1" />
                   +7 (900) 123-45-67
                 </a>
-                <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">
+                <a href="mailto:info@ktstudio.ru" className="flex items-center text-sm text-muted-foreground hover:text-accent transition-colors">
                   <Mail className="w-4 h-4 mr-1" />
                   info@ktstudio.ru
                 </a>

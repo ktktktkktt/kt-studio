@@ -90,7 +90,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-card text-card-foreground rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-primary to-accent text-white p-6 rounded-t-2xl">
           <div className="flex justify-between items-center">
@@ -112,7 +112,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
           {/* Personal Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-foreground mb-2">
                 <User className="w-4 h-4 inline mr-2" />
                 Ваше имя *
               </label>
@@ -122,13 +122,13 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
                 placeholder="Введите ваше имя"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-foreground mb-2">
                 <Mail className="w-4 h-4 inline mr-2" />
                 Email *
               </label>
@@ -138,7 +138,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
                 placeholder="your@email.com"
               />
             </div>
@@ -146,7 +146,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
 
           {/* Phone */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               <Phone className="w-4 h-4 inline mr-2" />
               Телефон *
             </label>
@@ -156,21 +156,21 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
               placeholder="+7 (999) 123-45-67"
             />
           </div>
 
           {/* Service */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Интересующая услуга
             </label>
             <select
               name="service"
               value={formData.service}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
             >
               <option value="">Выберите услугу</option>
               {services.map((service, index) => (
@@ -181,10 +181,10 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
 
           {/* Contact Method */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Предпочтительный способ связи
             </label>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 text-foreground">
               <label className="flex items-center">
                 <input
                   type="radio"
@@ -226,7 +226,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
 
           {/* Preferred Time */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               <Clock className="w-4 h-4 inline mr-2" />
               Удобное время для звонка
             </label>
@@ -234,7 +234,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
               name="preferredTime"
               value={formData.preferredTime}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
             >
               <option value="">Выберите время</option>
               {timeSlots.map((time, index) => (
@@ -245,23 +245,23 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
 
           {/* Message */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Сообщение
             </label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none"
+              rows={4]
+              className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none bg-background text-foreground"
               placeholder="Расскажите о вашем проекте..."
             />
           </div>
 
           {/* Benefits */}
-          <div className="bg-gray-50 rounded-lg p-4">
+          <div className="bg-muted rounded-lg p-4">
             <h3 className="font-semibold mb-2">Что вы получите:</h3>
-            <ul className="space-y-1 text-sm text-gray-600">
+            <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• Бесплатную консультацию 30-60 минут</li>
               <li>• Анализ вашего проекта и рекомендации</li>
               <li>• Предварительную оценку стоимости</li>

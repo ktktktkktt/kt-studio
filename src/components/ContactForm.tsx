@@ -39,12 +39,12 @@ const ContactForm = () => {
 
   if (isSubmitted) {
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
+      <div className="bg-card rounded-2xl p-8 shadow-lg text-center">
         <div className="text-green-500 mb-4 flex justify-center">
           <CheckCircle className="w-16 h-16" />
         </div>
         <h3 className="text-2xl font-bold mb-4">Спасибо за заявку!</h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-muted-foreground mb-6">
           Мы получили вашу заявку и свяжемся с вами в ближайшее время.
         </p>
         <button 
@@ -61,13 +61,13 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg">
+    <div className="bg-card rounded-2xl p-8 shadow-lg">
       <h3 className="text-2xl font-bold mb-6 text-center">
         Получить консультацию
       </h3>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
             Имя *
           </label>
           <input
@@ -77,13 +77,13 @@ const ContactForm = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
             placeholder="Ваше имя"
           />
         </div>
         
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
             Телефон *
           </label>
           <input
@@ -93,13 +93,13 @@ const ContactForm = () => {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
             placeholder="+7 (___) ___-__-__"
           />
         </div>
         
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
             Email
           </label>
           <input
@@ -108,13 +108,13 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
             placeholder="your@email.com"
           />
         </div>
         
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
             Сообщение
           </label>
           <textarea
@@ -123,12 +123,12 @@ const ContactForm = () => {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none bg-background text-foreground"
             placeholder="Расскажите о вашем проекте..."
           />
         </div>
         
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-muted-foreground">
           Нажимая кнопку, вы соглашаетесь с{' '}
           <a href="/privacy" className="text-primary hover:underline">
             политикой конфиденциальности

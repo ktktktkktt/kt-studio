@@ -134,7 +134,7 @@ const StyleShop = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   StyleShop — молодой бренд модной одежды, ориентированный на активных городских жителей 20-35 лет.
                 </p>
-                <a href="#" className="inline-flex items-center text-accent hover:text-primary transition-colors text-sm font-medium">
+                <a href="/contacts" className="inline-flex items-center text-accent hover:text-primary transition-colors text-sm font-medium">
                   Посетить сайт
                   <ExternalLink className="w-4 h-4 ml-1" />
                 </a>

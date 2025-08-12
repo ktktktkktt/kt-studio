@@ -40,7 +40,7 @@ const TechStore = () => {
               
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="/contacts"
                   className="btn-primary inline-flex items-center"
                 >
                   Посетить сайт
