@@ -27,14 +27,15 @@ const CallToAction = () => {
             </button>
             <a 
               href="mailto:info@tkachenko-kirill.ru"
-              className="flex items-center bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors"
+              className="flex items-center bg-foreground/10 backdrop-blur-sm border border-foreground/20 text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-foreground/20 transition-colors"
+
             >
               <Mail className="w-5 h-5 mr-2" />
               Написать email
             </a>
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors"
+              className="flex items-center bg-foreground/10 backdrop-blur-sm border border-foreground/20 text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-foreground/20 transition-colors"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Онлайн-чат

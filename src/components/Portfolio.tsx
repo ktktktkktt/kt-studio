@@ -121,13 +121,14 @@ const Portfolio = ({ showAll = false }: PortfolioProps) => {
   const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-background">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Наши работы</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Примеры успешно реализованных проектов различной сложности
           </p>
+
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -135,7 +136,8 @@ const Portfolio = ({ showAll = false }: PortfolioProps) => {
             <Link 
               key={index} 
               to={project.link}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group block hover:-translate-y-2"
+              className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group block hover:-translate-y-2"
+
             >
               <div className="relative overflow-hidden">
                 <img 
@@ -156,10 +158,10 @@ const Portfolio = ({ showAll = false }: PortfolioProps) => {
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span key={i} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">

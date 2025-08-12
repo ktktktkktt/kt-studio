@@ -42,7 +42,7 @@ const Stats = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="bg-white/10 rounded-full p-6 mb-4 mx-auto w-fit group-hover:bg-white/20 transition-colors">
+              <div className="bg-foreground/10 rounded-full p-6 mb-4 mx-auto w-fit group-hover:bg-foreground/20 transition-colors">
                 <div className="text-accent">
                   {stat.icon}
                 </div>
